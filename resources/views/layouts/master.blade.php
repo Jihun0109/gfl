@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>AdminLTE 3 | Top Navigation</title>
+    <title>GFL Offical Website</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
@@ -22,7 +22,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
             <div class="container">
                 <div>
-                    <a href="/" class="navbar-brand">
+                    <a href="{{route('home',app()->getLocale())}}" class="navbar-brand">
                         <img src="{{asset('img/logo.png')}}" alt="AdminLTE Logo" class="brand-image">
                     </a>
                 </div>
@@ -33,18 +33,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
+                        <div></div>
                         <!-- SEARCH FORM -->
-                        <form class="form-inline ml-0 ml-md-3">
-                            <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                    aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="btn btn-navbar" type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
+                        <div class="d-flex">                            
+                            <form class="form-inline ml-0 ml-md-3">
+                                <div class="input-group input-group-sm">
+                                    <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-navbar" type="submit">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                            <ul class="d-flex ml-auto">
+                                @foreach (config('app.available_locales') as $locale)
+                                <li class="navbar-nav">                                    
+                                    <a class="nav-link"
+                                        @if (app()->getLocale() == $locale) style="text-decoration: underline" @endif
+                                        href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}" class="nav-link">{{strtoupper($locale)}}</a>
+                                </li>
+                                @endforeach                                
+                            </ul>
+                        </div>
                     </div>
                     
 
@@ -52,7 +64,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- Left navbar links -->
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="/" class="nav-link">Home</a>
+                                <a href="{{ route('home', app()->getLocale()) }}" class="nav-link">{{ __('Home') }}</a>
                             </li>
                             
                             <li class="nav-item dropdown">
@@ -155,7 +167,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     Anything you want
                 </div>
                 <!-- Default to the left -->
-                <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+                <strong>Copyright &copy; 2020 <a href="">GFL</a>.</strong> All rights
                 reserved.
             </footer>
         </div>

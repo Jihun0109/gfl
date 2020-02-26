@@ -11,19 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+    return redirect(app()->getLocale());
 });
 
+Route::group([
+        'prefix' => '{Locale}', 
+        'where' => ['locale' => '[a-zA-Z]{2}'],
+        'middleware' => 'setlocale',
+    ], function(){
+        // Route::get('/', function () {
+        //     return view('welcome');
+        // });        
+        
+        Auth::routes();
+        
+        Route::get('/', 'HomeController@index')->name('home');
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
