@@ -15,6 +15,10 @@ Route::get('/', function(){
     return redirect(app()->getLocale());
 });
 
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
 Route::group([
         'prefix' => '{Locale}', 
         'where' => ['locale' => '[a-zA-Z]{2}'],
@@ -27,8 +31,6 @@ Route::group([
         Auth::routes();
         
         Route::get('/', 'HomeController@index')->name('home');
-});
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+        Route::get('contact', 'ContactController@index')->name('contact');
 });

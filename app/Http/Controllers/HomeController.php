@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Log;
+use App\TblHomeSlide;
+
 class HomeController extends Controller
 {
     /**
@@ -23,6 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $slides = TblHomeSlide::where('status','PUBLISHED')->get();
+        Log::info($slides);
+        return view('home')->with('slides', $slides);
     }
 }

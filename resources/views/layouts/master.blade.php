@@ -12,10 +12,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <title>GFL Offical Website</title>
 
+    <script src="{{ asset('js/app.js') }}"></script>
+
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
-<body class="hold-transition layout-top-nav layout-footer-fixed">
+<body class="hold-transition layout-top-nav">
     <div class="wrapper">
 
         <!-- Navbar -->
@@ -135,7 +137,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a href="#" class="nav-link">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Contact Us</a>
+                                <a href="{{route('contact', app()->getLocale())}}" class="nav-link">Contact Us</a>
                             </li>
                         </ul>
 
@@ -152,7 +154,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Main content -->
             <div class="content">
-                <div class="container">
+                <div class="container" id="app">
                     @yield('content')
                 </div>
                 <!-- /.content -->
@@ -161,19 +163,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
             <!-- Main Footer -->
-            <footer class="main-footer">
-                <!-- To the right -->
-                <div class="float-right d-none d-sm-inline">
-                    Anything you want
+            <footer class="main-footer" style="background-image: linear-gradient(-90deg, #4e6dde,#6ecbe9 )">
+                <div class="d-flex justify-content-between" style="color:white;">
+                    <div>
+                        <a href="{{route('home',app()->getLocale())}}" class="navbar-brand">
+                            <img src="{{asset('img/logo1.png')}}" alt="" class="brand-image">
+                        </a>
+                        <div class="text-center">Copyright &copy; 2020 Global Fortune Limited all rights reserved</div>
+                    </div>
+                    <div class="d-flex justify-content-end">                        
+                        <div class="pr-5">
+                            <h3>Follow Us</h3>
+                            <ul class="social-links">
+                                <li><a href="#"><img src="{{asset('img/social/instagram.svg')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('img/social/facebook.svg')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('img/social/youtube.svg')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('img/social/linkedin.svg')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('img/social/weibo.svg')}}" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <img class="qr-image" src="{{asset('img/qr.png')}}" alt="">
+                    </div>
                 </div>
-                <!-- Default to the left -->
-                <strong>Copyright &copy; 2020 <a href="">GFL</a>.</strong> All rights
-                reserved.
             </footer>
         </div>
         <!-- ./wrapper -->
 
-        <script src="{{ asset('js/app.js') }}"></script>
+        
 </body>
 
 </html>

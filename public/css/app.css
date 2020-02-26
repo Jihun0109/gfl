@@ -46819,3 +46819,71 @@ readers do not read off random characters that represent icons */
   height: auto;
 }
 
+.main-footer .brand-image {
+  width: 130px;
+}
+
+.main-footer .qr-image {
+  width: 80px;
+  height: 80px;
+}
+
+.container {
+  background-color: white;
+  padding: 0;
+}
+
+.cate-heading {
+  font-size: 1.5rem;
+}
+
+.small-product img {
+  border: 3px solid #adb5bd;
+  margin: 0 auto;
+  padding: 3px;
+  width: 100%;
+}
+
+.product-img {
+  border: 3px solid #adb5bd;
+  margin: 0 auto;
+  padding: 3px;
+  width: 100%;
+}
+
+.social-links {
+  padding-left: 0;
+  list-style: none;
+}
+
+.social-links > li {
+  float: left;
+  padding: 5px;
+  text-align: center;
+  color: white;
+}
+
+.social-links > li img {
+  width: 30px;
+}
+
+.contact-item {
+  display: flex;
+  margin: 3px;
+}
+
+.contact-item img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.contact-item span {
+  font-size: 1.1rem;
+}
+
+.contact-holder {
+  min-height: 250px;
+  padding: 8px;
+}
+
