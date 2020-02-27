@@ -35,7 +35,7 @@
             </div>
             <div class="d-flex justify-content-center">
                 <div class="col-8">
-                    
+                    <example-component></example-component>
                 </div>
             </div>
         </div>

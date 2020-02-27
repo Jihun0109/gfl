@@ -5,7 +5,7 @@
     <div class="text-center">
         <img class="img" src="{{'../../../storage/' . $event->image}}" alt="" style="width: 100%;">
     </div>
-    <div class="d-flex" style="font-size:1.3rem;">        
+    <div class="row" style="font-size:1.3rem;">        
         <div class="col-md-8 col-sm-12">
             <div class="col-md-12 mt-5">
                 <h1 class="pb-1">
@@ -170,7 +170,6 @@
                 </form>
             </div>
         </div>
-    </div>
-    {{$event}}
+    </div>    
 </div>
 @endsection
