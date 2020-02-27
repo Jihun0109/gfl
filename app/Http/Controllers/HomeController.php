@@ -26,8 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $slides = TblHomeSlide::where('status','PUBLISHED')->get();
-        Log::info($slides);
+        $slides = TblHomeSlide::where(['status'=>'PUBLISHED', 'type'=>'HOME'])->get();       
+        
         return view('home')->with('slides', $slides);
     }
 }

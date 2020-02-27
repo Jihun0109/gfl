@@ -12,14 +12,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <title>GFL Offical Website</title>
 
-    <script src="{{ asset('js/app.js') }}"></script>
-
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
 <body class="hold-transition layout-top-nav">
     <div class="wrapper">
-
+        {{-- <div>
+            {{route(\Illuminate\Support\Facades\Route::currentRouteName(), [Request::segment(1), Request::segment(2)??''])}}            
+        </div>
+        <div>
+            {{Request::segment(4)}}
+        </div> --}}
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
             <div class="container">
@@ -54,7 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <li class="navbar-nav">                                    
                                     <a class="nav-link"
                                         @if (app()->getLocale() == $locale) style="text-decoration: underline" @endif
-                                        href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}" class="nav-link">{{strtoupper($locale)}}</a>
+                                        href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), [$locale, Request::segment(4)??'']) }}" class="nav-link">{{strtoupper($locale)}}</a>
                                 </li>
                                 @endforeach                                
                             </ul>
@@ -121,10 +124,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false" class="nav-link dropdown-toggle">News & Insights</a>
                                 <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                                    <li><a href="#" class="dropdown-item">News</a></li>
+                                    <li><a href="{{route('events.index', app()->getLocale())}}" class="dropdown-item">News</a></li>
                                     <li><a href="#" class="dropdown-item">Blogs</a></li>
                                     <li><a href="#" class="dropdown-item">Events</a></li>
                                     <li><a href="#" class="dropdown-item">Reports & Insights</a></li>
@@ -189,7 +192,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         <!-- ./wrapper -->
 
-        
+        <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column">        
         <div class="col-md-12" style="padding: 0">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
