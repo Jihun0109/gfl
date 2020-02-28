@@ -5,57 +5,53 @@
     <div class="text-center">
         <img class="img" src="{{'../../../storage/' . $event->image}}" alt="" style="width: 100%;">
     </div>
-    <div class="row px-4" style="font-size:1.3rem;">        
+    <div class="row px-4">        
         <div class="col-md-8 col-sm-12">
             <div class="col-md-12 mt-5">
-                <h1 class="pb-1">
+                <h2 class="pb-1">
                     @if (app()->getLocale() == 'en')
                     About This Webinar
                     @else
                     关于此网络研讨会
                     @endif
-                </h1>
+                </h2>
                 <div>
                     {!! $event->description !!}
                 </div>
             </div>
             <div class="col-md-12 mt-5">
-                <h1 class="pb-1">
+                <h2 class="pb-1">
                     @if (app()->getLocale() == 'en')
                     Agenda
                     @else
                     议程
                     @endif
-                </h1>
+                </h2>
                 <div>
-                    <ul>
-                        @foreach ($event->agenda as $item)
-                        <li>{{$item}}</li>
-                        @endforeach
-                    </ul>
+                    {!! $event->agenda !!}
                 </div>
             </div>
             <div class="d-flex mt-5">
                 <div class="col-md-6">
-                    <h1 class="pb-1">
+                    <h2 class="pb-1">
                         @if (app()->getLocale() == 'en')
                         Organizer
                         @else
                         组织者
                         @endif
-                    </h1>
+                    </h2>
                     <div>
                         {!! $event->organizer !!}
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h1 class="pb-1">
+                    <h2 class="pb-1">
                         @if (app()->getLocale() == 'en')
                         Technical Support
                         @else
                         技术支援
                         @endif
-                    </h1>
+                    </h2>
                     <div>
                         {!! $event->support !!}
                     </div>
@@ -63,25 +59,25 @@
             </div>
             <div class="d-flex mt-5">
                 <div class="col-md-6">
-                    <h1 class="pb-1">
+                    <h2 class="pb-1">
                         @if (app()->getLocale() == 'en')
                         Date
                         @else
                         日期
                         @endif
-                    </h1>
+                    </h2>
                     <div>
                         {!! $event->date !!}
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h1 class="pb-1">
+                    <h2 class="pb-1">
                         @if (app()->getLocale() == 'en')
                         Duration
                         @else
                         持续时间
                         @endif
-                    </h1>
+                    </h2>
                     <div>
                         {!! $event->duration !!} {{app()->getLocale() == 'en'?' Hours':'小时'}}
                     </div>
@@ -89,25 +85,25 @@
             </div>
             
             <div class="col-md-12 mt-5">
-                <h1 class="pb-1">
+                <h2 class="pb-1">
                     @if (app()->getLocale() == 'en')
                     Location
                     @else
                     位置
                     @endif
-                </h1>
+                </h2>
                 <div>
                     {!! $event->location !!}
                 </div>
             </div>
             <div class="col-md-12 mt-5">
-                <h1 class="pb-1">
+                <h2 class="pb-1">
                     @if (app()->getLocale() == 'en')
                     Presented by
                     @else
                     提出者
                     @endif
-                </h1>
+                </h2>
                 <div class="d-flex">
                     <img class="img-circle elevation-2" src="{{'../../../storage/' . $event->presentor_image}}"
                         style="float: left; height: auto; width: 80px;height: 80px;" alt="{{$event->presentor_name}}">
@@ -132,7 +128,7 @@
             </div>
         </div>
         <div class="col-md-4 col-sm-12">
-            <h1 class=" mt-5">Register now to reserve your seat!</h1>
+            <h2 class=" mt-5">Register now to reserve your seat!</h2>
             <div>
                 <form action="">
                     <div class="form-group pr-3">

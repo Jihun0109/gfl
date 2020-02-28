@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use DB;
 use Log;
 use App\Event;
+use Carbon\Carbon;
 
 class APIController extends Controller
 {
-    public function events($locale)
+    public function events(Request $request, $locale)
     {
+        $page = $request->input('page');
+
         $events = Event::select('id','image','title','description','start_date', 'type')
                 ->latest()->paginate(2);
 
@@ -22,6 +25,7 @@ class APIController extends Controller
             if (!$localeIndex){
                 $val['title'] = explode('//', $val['title'])[0];
                 $val['description'] = explode('//', $val['description'])[0];
+                $val['start_date'] = Carbon::create($val['start_date'])->format('M d Y');
                 // $val['organizer'] = explode('//', $val['organizer'])[0];
                 // $val['support'] = explode('//', $val['support'])[0];
                 // $val['location'] = explode('//', $val['location'])[0];
@@ -32,6 +36,7 @@ class APIController extends Controller
             } else {
                 $val['title'] = explode('//', $val['title'])[1]??explode('//', $val['title'])[0];
                 $val['description'] = explode('//', $val['description'])[1]??explode('//', $val['description'])[0];
+                $val['start_date'] = Carbon::create($val['start_date'])->format('Y年m月d日');
                 // $val['organizer'] = explode('//', $val['organizer'])[1]??explode('//', $val['organizer'])[0];
                 // $val['support'] = explode('//', $val['support'])[1]??explode('//', $val['support'])[0];
                 // $val['location'] = explode('//', $val['location'])[1]??explode('//', $val['location'])[0];

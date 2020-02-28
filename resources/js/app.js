@@ -6,6 +6,10 @@
 
 require('./bootstrap');
 
+
+import moment from "moment";
+window.moment = require('moment');
+
 window.Vue = require('vue');
 
 /**
@@ -25,11 +29,15 @@ Vue.component('event-home-component', require('./components/EventHomeComponent.v
 Vue.component('calendar-component', require('./components/CalendarComponent.vue').default);
 Vue.component('event-component', require('./components/EventComponent.vue').default);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+var filter = function(text, length, clamp){
+    clamp = clamp || '...';
+    var node = document.createElement('div');
+    node.innerHTML = text;
+    var content = node.textContent;
+    return content.length > length ? content.slice(0, length) + clamp : content;
+};
+
+Vue.filter('truncate', filter);
 
 const app = new Vue({
     el: '#app',

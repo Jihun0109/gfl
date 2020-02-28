@@ -38,5 +38,10 @@ Route::group([
         Route::get('events', 'EventController@index')->name('events.index');
         Route::get('events/detail/{event_id}', 'EventController@detail')->name('events.detail');
 
+        Route::get('startups', 'StartupController@index')->name('solutions.startups');
+        Route::get('brands', 'BrandController@index')->name('solutions.brands');
+        Route::get('e-commerce', 'EcommerceController@index')->name('solutions.ecommerce');
+        Route::get('industrials', 'IndustrialController@index')->name('solutions.industrials');
+
         Route::get('api/events', 'APIController@events');
 });

@@ -22,7 +22,7 @@ class EventController extends Controller
     public function detail(Request $request, $Locale, $event_id)
     {
         $event = Event::where('id',$event_id)
-                ->select('*',DB::raw('HOUR(TIMEDIFF(end_time, start_time)) as duration'))
+                ->select('*',DB::raw('DAY(TIMEDIFF(end_date, start_date)) as duration'))
                 ->first();
         
         $description = explode('//', $event->description);
@@ -62,9 +62,10 @@ class EventController extends Controller
             $event->tags = $tags[1]??$tags[0];
         }
 
-        $event->agenda = explode('**', $event->agenda);
+        //$event->agenda = explode('**', $event->agenda);
         $event->tags = explode(',', $event->tags);
-        $event->tags = explode('，', $event->tags[0]);
+        if (sizeof($event->tags) == 1)
+            $event->tags = explode('，', $event->tags[0]);
         
         return view('events.detail')->with('event', $event);
     }

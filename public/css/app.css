@@ -46896,3 +46896,8 @@ readers do not read off random characters that represent icons */
   color: #fc5e08;
 }
 
+.carousel-item img {
+  width: 100%;
+  height: 38vw;
+}
+

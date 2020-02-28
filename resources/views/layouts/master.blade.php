@@ -76,10 +76,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false" class="nav-link dropdown-toggle">Solution</a>
                                 <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                                    <li><a href="#" class="dropdown-item">Start-ups </a></li>
-                                    <li><a href="#" class="dropdown-item">Brands</a></li>
-                                    <li><a href="#" class="dropdown-item">E-commerce</a></li>
-                                    <li><a href="#" class="dropdown-item">Industrial</a></li>
+                                    <li><a href="{{route('solutions.startups', app()->getLocale())}}" class="dropdown-item">Start-ups </a></li>
+                                    <li><a href="{{route('solutions.brands', app()->getLocale())}}" class="dropdown-item">Brands</a></li>
+                                    <li><a href="{{route('solutions.ecommerce', app()->getLocale())}}" class="dropdown-item">E-commerce</a></li>
+                                    <li><a href="{{route('solutions.industrials', app()->getLocale())}}" class="dropdown-item">Industrial</a></li>
                                 </ul>
                             </li>
 
@@ -157,7 +157,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Main content -->
             <div class="content">
-                <div class="container" id="app">
+                <div class="" id="app">
                     @yield('content')
                 </div>
                 <!-- /.content -->
