@@ -19,9 +19,10 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+
 Route::group([
         'prefix' => '{Locale}', 
-        'where' => ['locale' => '[a-zA-Z]{2}'],
+        'where' => ['Locale' => '[a-zA-Z]{2}'],
         'middleware' => 'setlocale',
     ], function(){
         // Route::get('/', function () {
@@ -36,4 +37,6 @@ Route::group([
 
         Route::get('events', 'EventController@index')->name('events.index');
         Route::get('events/detail/{event_id}', 'EventController@detail')->name('events.detail');
+
+        Route::get('api/events', 'APIController@events');
 });

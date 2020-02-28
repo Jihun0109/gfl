@@ -1,8 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container">
-    <div class="d-flex flex-column">
+    <div class="container">
         <div class="col-md-12" style="padding: 0">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -14,7 +13,8 @@
                 <div class="carousel-inner">
                     @foreach ($slides as $index => $slide)
                     <div class="carousel-item @if($index==0)active @endif">
-                        <img class="d-block w-100" src="{{'../storage/' . $slide->image}}" alt="{{$slide->description}}">
+                        <img class="d-block w-100" src="{{'../storage/' . $slide->image}}"
+                            alt="{{$slide->description}}">
                     </div>
                     @endforeach
 
@@ -29,16 +29,10 @@
                 </a>
             </div>
         </div>
-        <div class="First Heading">
-            <div class="d-flex justify-content-center pt-5">
-                <h1>GFL Events & Insights</h1>
-            </div>
-            <div class="d-flex justify-content-center">
-                <div class="col-8">
-                    <example-component></example-component>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        <event-home-component></event-home-component>
+    </div> 
 @endsection
+
+<script>
+    console.log("Parent");
+</script>

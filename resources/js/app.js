@@ -21,6 +21,10 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+Vue.component('event-home-component', require('./components/EventHomeComponent.vue').default);
+Vue.component('calendar-component', require('./components/CalendarComponent.vue').default);
+Vue.component('event-component', require('./components/EventComponent.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -29,4 +33,11 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    
+    data() {
+        return {
+
+        }
+    },
+    
 });

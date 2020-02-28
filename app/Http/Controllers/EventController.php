@@ -29,7 +29,7 @@ class EventController extends Controller
         $agenda = explode('//', $event->agenda);
         $organizer = explode('//', $event->organizer);
         $support = explode('//', $event->support);
-        $location = explode('//', $event->location);        
+        $location = explode('//', $event->location);
         $presentor_name = explode('//', $event->presentor_name);
         $presentor_title = explode('//', $event->presentor_title);
         $presentor_info = explode('//', $event->presentor_info);
@@ -40,7 +40,8 @@ class EventController extends Controller
             $event->agenda = $agenda[0];
             $event->organizer = $organizer[0];
             $event->support = $support[0];
-            $event->date = Carbon::create($event->date)->format('M d Y');
+            $event->start_date = Carbon::create($event->start_date)->format('M d Y');
+            $event->end_date = $event->end_date?Carbon::create($event->end_date)->format('M d Y'):$event->start_date;
             $event->location = $location[0];
             $event->presentor_name = $presentor_name[0];
             $event->presentor_title = $presentor_title[0];
@@ -52,7 +53,8 @@ class EventController extends Controller
             $event->agenda = $agenda[1]??$agenda[0];
             $event->organizer = $organizer[1]??$organizer[0];
             $event->support = $support[1]??$support[0];
-            $event->date = Carbon::create($event->date)->format('Y年m月d日');
+            $event->start_date = Carbon::create($event->start_date)->format('Y年m月d日');
+            $event->end_date = $event->end_date?Carbon::create($event->end_date)->format('Y年m月d日'):$event->start_date;
             $event->location = $location[1]??$location[0];
             $event->presentor_name = $presentor_name[1]??$presentor_name[0];
             $event->presentor_title = $presentor_title[1]??$presentor_title[0];
@@ -62,7 +64,8 @@ class EventController extends Controller
 
         $event->agenda = explode('**', $event->agenda);
         $event->tags = explode(',', $event->tags);
-
+        $event->tags = explode('，', $event->tags[0]);
+        
         return view('events.detail')->with('event', $event);
     }
 }

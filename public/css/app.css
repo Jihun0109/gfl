@@ -46887,3 +46887,12 @@ readers do not read off random characters that represent icons */
   padding: 8px;
 }
 
+.bg-high-color {
+  background-color: #fc5e08;
+  color: white;
+}
+
+.high-color {
+  color: #fc5e08;
+}
+

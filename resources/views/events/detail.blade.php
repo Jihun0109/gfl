@@ -5,7 +5,7 @@
     <div class="text-center">
         <img class="img" src="{{'../../../storage/' . $event->image}}" alt="" style="width: 100%;">
     </div>
-    <div class="row" style="font-size:1.3rem;">        
+    <div class="row px-4" style="font-size:1.3rem;">        
         <div class="col-md-8 col-sm-12">
             <div class="col-md-12 mt-5">
                 <h1 class="pb-1">
@@ -35,54 +35,59 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-12 mt-5">
-                <h1 class="pb-1">
-                    @if (app()->getLocale() == 'en')
-                    Organizer
-                    @else
-                    组织者
-                    @endif
-                </h1>
-                <div>
-                    {!! $event->organizer !!}
+            <div class="d-flex mt-5">
+                <div class="col-md-6">
+                    <h1 class="pb-1">
+                        @if (app()->getLocale() == 'en')
+                        Organizer
+                        @else
+                        组织者
+                        @endif
+                    </h1>
+                    <div>
+                        {!! $event->organizer !!}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h1 class="pb-1">
+                        @if (app()->getLocale() == 'en')
+                        Technical Support
+                        @else
+                        技术支援
+                        @endif
+                    </h1>
+                    <div>
+                        {!! $event->support !!}
+                    </div>
                 </div>
             </div>
-            <div class="col-md-12 mt-5">
-                <h1 class="pb-1">
-                    @if (app()->getLocale() == 'en')
-                    Technical Support
-                    @else
-                    技术支援
-                    @endif
-                </h1>
-                <div>
-                    {!! $event->support !!}
+            <div class="d-flex mt-5">
+                <div class="col-md-6">
+                    <h1 class="pb-1">
+                        @if (app()->getLocale() == 'en')
+                        Date
+                        @else
+                        日期
+                        @endif
+                    </h1>
+                    <div>
+                        {!! $event->date !!}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h1 class="pb-1">
+                        @if (app()->getLocale() == 'en')
+                        Duration
+                        @else
+                        持续时间
+                        @endif
+                    </h1>
+                    <div>
+                        {!! $event->duration !!} {{app()->getLocale() == 'en'?' Hours':'小时'}}
+                    </div>
                 </div>
             </div>
-            <div class="col-md-12 mt-5">
-                <h1 class="pb-1">
-                    @if (app()->getLocale() == 'en')
-                    Date
-                    @else
-                    日期
-                    @endif
-                </h1>
-                <div>
-                    {!! $event->date !!}
-                </div>
-            </div>
-            <div class="col-md-12 mt-5">
-                <h1 class="pb-1">
-                    @if (app()->getLocale() == 'en')
-                    Duration
-                    @else
-                    持续时间
-                    @endif
-                </h1>
-                <div>
-                    {!! $event->duration !!} {{app()->getLocale() == 'en'?' Hours':'小时'}}
-                </div>
-            </div>
+            
             <div class="col-md-12 mt-5">
                 <h1 class="pb-1">
                     @if (app()->getLocale() == 'en')
@@ -170,6 +175,6 @@
                 </form>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
 @endsection
