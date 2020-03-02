@@ -43,5 +43,7 @@ Route::group([
         Route::get('e-commerce', 'EcommerceController@index')->name('solutions.ecommerce');
         Route::get('industrials', 'IndustrialController@index')->name('solutions.industrials');
 
+        Route::get('kornit-intro', 'KornitController@index')->name('kornit.intro');
+        
         Route::get('api/events', 'APIController@events');
 });

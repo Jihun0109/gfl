@@ -5,8 +5,8 @@
  */
 
 require('./bootstrap');
-
-
+window.AOS = require('aos');
+window.AOS.init();
 import moment from "moment";
 window.moment = require('moment');
 
@@ -29,7 +29,7 @@ Vue.component('event-home-component', require('./components/EventHomeComponent.v
 Vue.component('calendar-component', require('./components/CalendarComponent.vue').default);
 Vue.component('event-component', require('./components/EventComponent.vue').default);
 
-var filter = function(text, length, clamp){
+var filter = function(text, length, clamp) {
     clamp = clamp || '...';
     var node = document.createElement('div');
     node.innerHTML = text;
@@ -41,11 +41,11 @@ Vue.filter('truncate', filter);
 
 const app = new Vue({
     el: '#app',
-    
+
     data() {
         return {
 
         }
     },
-    
+
 });
