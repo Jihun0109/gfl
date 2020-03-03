@@ -44,6 +44,10 @@ Route::group([
         Route::get('industrials', 'IndustrialController@index')->name('solutions.industrials');
 
         Route::get('kornit-intro', 'KornitController@index')->name('kornit.intro');
+        Route::get('melco-intro', 'MelcoController@index')->name('melco.intro');
+        Route::get('inkcups-intro', 'InkcupsController@index')->name('inkcups.intro');
         
         Route::get('api/events', 'APIController@events');
+
+        Route::get('api/test', 'APIController@test');
 });

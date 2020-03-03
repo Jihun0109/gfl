@@ -50060,6 +50060,11 @@ readers do not read off random characters that represent icons */
   max-width: 50vw;
 }
 
+.auto-height-img-full {
+  width: 100%;
+  height: auto;
+}
+
 .lh-1 {
   line-height: 1rem;
 }

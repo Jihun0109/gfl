@@ -92,65 +92,66 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 aria-expanded="false" class="nav-link dropdown-toggle">Partners</a>
                             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
                                 <li class="dropdown-submenu dropdown-hover">
-                                    <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false"
+                                    <a id="dropmenu-kornit" href="{{route('kornit.intro', app()->getLocale())}}"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         class="dropdown-item dropdown-toggle">Kornit</a>
                                     <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
-                                        <li><a tabindex="-1" href="{{route('kornit.intro', app()->getLocale())}}"
-                                                class="dropdown-item">Introduction</a></li>
-                                        <li><a tabindex="-1" href="#" class="dropdown-item">DTG</a></li>
-                                        <li><a tabindex="-1" href="#" class="dropdown-item">DTF</a></li>
-                                        <li><a tabindex="-1" href="#" class="dropdown-item">Used Machine</a></li>
-                                        <li><a tabindex="-1" href="#" class="dropdown-item">Supplies & Accessories</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-submenu dropdown-hover">
-                                    <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false"
-                                        class="dropdown-item dropdown-toggle">Melco</a>
-                                    <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
-                                        <li><a tabindex="-1" href="#" class="dropdown-item">Introduction</a></li>
-                                        <li><a tabindex="-1" href="#" class="dropdown-item">Single Head</a></li>
-                                        <li><a tabindex="-1" href="#" class="dropdown-item">Multi Head</a></li>
-                                        <li><a tabindex="-1" href="#" class="dropdown-item">Supplies & Accessories</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-submenu dropdown-hover">
-                                    <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false"
-                                        class="dropdown-item dropdown-toggle">Inkcups</a>
-                                    <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
-                                        <li><a tabindex="-1" href="#" class="dropdown-item">Introduction</a></li>
-                                        <li><a tabindex="-1" href="#" class="dropdown-item">Products</a></li>
-                                        <li><a tabindex="-1" href="#" class="dropdown-item">Supplies & Accessories</a>
-                                        </li>
-                                        <li><a tabindex="-1" href="#" class="dropdown-item">Sustainability</a></li>
-                                    </ul>
+                                        {{-- <li><a tabindex="-1" href="{{route('kornit.intro', app()->getLocale())}}"
+                                        class="dropdown-item">Introduction</a>
+                                </li> --}}
+                                <li><a tabindex="-1" href="#" class="dropdown-item">DTG</a></li>
+                                <li><a tabindex="-1" href="#" class="dropdown-item">DTF</a></li>
+                                <li><a tabindex="-1" href="#" class="dropdown-item">Used Machine</a></li>
+                                <li><a tabindex="-1" href="#" class="dropdown-item">Supplies & Accessories</a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false" class="nav-link dropdown-toggle">News & Insights</a>
-                            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                                <li><a href="{{route('events.index', app()->getLocale())}}"
-                                        class="dropdown-item">News</a></li>
-                                <li><a href="#" class="dropdown-item">Blogs</a></li>
-                                <li><a href="#" class="dropdown-item">Events</a></li>
-                                <li><a href="#" class="dropdown-item">Reports & Insights</a></li>
+                        <li class="dropdown-submenu dropdown-hover">
+                            <a id="dropmenu-melco" href="{{route('melco.intro', app()->getLocale())}}" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                class="dropdown-item dropdown-toggle">Melco</a>
+                            <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
+                                {{-- <li><a tabindex="-1" href="#" class="dropdown-item">Introduction</a></li> --}}
+                                <li><a tabindex="-1" href="#" class="dropdown-item">Single Head</a></li>
+                                <li><a tabindex="-1" href="#" class="dropdown-item">Multi Head</a></li>
+                                <li><a tabindex="-1" href="#" class="dropdown-item">Supplies & Accessories</a>
+                                </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Support</a>
+                        <li class="dropdown-submenu dropdown-hover">
+                            <a id="dropmenu-inkcups" href="{{route('inkcups.intro', app()->getLocale())}}" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                class="dropdown-item dropdown-toggle">Inkcups</a>
+                            <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
+                                {{-- <li><a tabindex="-1" href="#" class="dropdown-item">Introduction</a></li> --}}
+                                <li><a tabindex="-1" href="#" class="dropdown-item">Products</a></li>
+                                <li><a tabindex="-1" href="#" class="dropdown-item">Supplies & Accessories</a>
+                                </li>
+                                <li><a tabindex="-1" href="#" class="dropdown-item">Sustainability</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('contact', app()->getLocale())}}" class="nav-link">Contact Us</a>
-                        </li>
+                    </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" class="nav-link dropdown-toggle">News & Insights</a>
+                        <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+                            <li><a href="{{route('events.index', app()->getLocale())}}" class="dropdown-item">News</a>
+                            </li>
+                            <li><a href="#" class="dropdown-item">Blogs</a></li>
+                            <li><a href="#" class="dropdown-item">Events</a></li>
+                            <li><a href="#" class="dropdown-item">Reports & Insights</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('contact', app()->getLocale())}}" class="nav-link">Contact Us</a>
+                    </li>
                     </ul>
 
 
@@ -202,6 +203,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- ./wrapper -->
 
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $("#dropmenu-kornit").on("click", function(e){
+                window.location = $("#dropmenu-kornit").attr("href");
+            });
+            $("#dropmenu-melco").on("click", function(e){
+            window.location = $("#dropmenu-melco").attr("href");
+            });
+            $("#dropmenu-inkcups").on("click", function(e){
+            window.location = $("#dropmenu-inkcups").attr("href");
+            })
+        });
+        
+    </script>
 </body>
 
 </html>

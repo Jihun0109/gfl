@@ -53,7 +53,7 @@
                     data-aos-delay="200" data-aos-duration="1500">
                     <img class="auto-height-img" src="{{asset('img/home/digital-solution-2.png')}}" alt="">
                     <a href="#" class="nav-link">
-                        <h4 class="text-center">Direct-to-Garment</h4>
+                        <h4 class="text-center">Direct-to-Fabric</h4>
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6 d-flex flex-column justify-content-center" data-aos="fade-up"
