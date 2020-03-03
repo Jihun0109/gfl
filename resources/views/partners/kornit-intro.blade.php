@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container-fluid" style="padding: 0">
+<div class="container-fluid" style="padding: 0" data-aos="fade-in" data-aos-delay="50" data-aos-duration="1000">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             @foreach ($slides as $index => $slide)
@@ -25,10 +25,15 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+        <div class="partners-heading kornit w-50 ml-auto mr-auto pl-3">
+            <h2>Kornit Digital</h2>
+            <h5>Complete Solution On Digital Printing</h5>
+            <button type="button" class="btn btn-flat d-none d-sm-block">Learn More</button>
+        </div>
     </div>
 </div>
 <div class="container">
-    <div class="row mt-4 pt-4">
+    <div class="row mt-4 pt-4" data-aos="fade-in" data-aos-delay="50" data-aos-duration="1000">
         <div class="col-md">
             <div class="col-md">
                 <div class="col-md">
@@ -45,19 +50,19 @@
     </div>
     <div class="row">
 
-        <div class="col-md-12" style="padding: 20px;">
+        <div class="col-md-12" style="padding: 20px;" data-aos="fade-in" data-aos-delay="50" data-aos-duration="1000">
             <img class="auto-height-img-full" src="{{asset('img/partners/kornit1.png')}}" alt="">
         </div>
         {{-- <h3 class="col-md-push-1">Kornit Digital offer an unique patented <b>Wet-on-Wet</b> Printing solution.
             Garment can go
             direct to Kornit system without a standalone pre-treadment process, which saving more human power, energy,
             and RISK during the printing process</h3> --}}
-        <div class="col-md-12" style="padding: 20px;">
+        <div class="col-md-12" style="padding: 20px;" data-aos="fade-in" data-aos-delay="50" data-aos-duration="1000">
             <img class="auto-height-img-full" src="{{asset('img/partners/kornit2.png')}}" alt="">
         </div>
     </div>
 
-    <div class="row" data-aos="fade-up">
+    <div class="row" data-aos="fade-in" data-aos-delay="50" data-aos-duration="1000">
         <div class="col-sm">
             <div class="card-body box-profile">
                 <div class="text-center">
@@ -95,10 +100,10 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center mt-3">
+    <div class="row justify-content-center mt-3" data-aos="fade-in" data-aos-delay="50" data-aos-duration="1000">
         <h3 class="color-secondary">"Successful Story"</h3>
     </div>
-    <div class="row">
+    <div class="row" data-aos="fade-in" data-aos-delay="50" data-aos-duration="1000">
         <div class="col-md">
             <img src="{{asset('img/partners/printful.png')}}" alt="" class="d-flex mr-3 col-md-6 auto-height-img">
         </div>
@@ -108,10 +113,10 @@
             <h4><small>7 Milion Tee Per Year, The Largest Fulfillment Center In US</small></h4>
         </div>
     </div>
-    <div class="row justify-content-center mt-3">
+    <div class="row justify-content-center mt-3" data-aos="fade-in" data-aos-delay="50" data-aos-duration="1000">
         <h3 class="color-secondary">"What's New"</h3>
     </div>
-    <div class="row">
+    <div class="row pb-5" data-aos="fade-in" data-aos-delay="50" data-aos-duration="1000">
         <div class="col-md">
             <img src="{{asset('img/partners/citpe2020.png')}}" alt="" class="d-flex mr-3 col-md-6 auto-height-img">
         </div>

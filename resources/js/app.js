@@ -7,6 +7,8 @@
 require('./bootstrap');
 window.AOS = require('aos');
 window.AOS.init();
+
+require('slick-carousel/slick/slick.min.js');
 import moment from "moment";
 window.moment = require('moment');
 
@@ -48,4 +50,71 @@ const app = new Vue({
         }
     },
 
+});
+
+let resposive_param = [{
+        breakpoint: 1920,
+        settings: {
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            infinite: true,
+            dots: true
+        }
+    },
+    {
+        breakpoint: 1024,
+        settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            infinite: true,
+            dots: true
+        }
+    },
+    {
+        breakpoint: 992,
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3
+        }
+    },
+    {
+        breakpoint: 768,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+        }
+    },
+    {
+        breakpoint: 576,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+]
+
+$('.inkcups').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+    responsive: resposive_param
+});
+$('.dtg').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+    responsive: resposive_param
+});
+
+$('.single').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+    responsive: resposive_param
 });

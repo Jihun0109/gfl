@@ -44,7 +44,16 @@ Route::group([
         Route::get('industrials', 'IndustrialController@index')->name('solutions.industrials');
 
         Route::get('kornit-intro', 'KornitController@index')->name('kornit.intro');
+        Route::get('kornit-dtg', 'KornitController@dtg')->name('kornit.dtg');
+        Route::get('kornit-dtf', 'KornitController@dtf')->name('kornit.dtf');
+        Route::get('kornit-used-machine', 'KornitController@usedmachine')->name('kornit.usedmachine');
+        Route::get('kornit-supplies-accessories', 'KornitController@accessories')->name('kornit.accessories');
+        
         Route::get('melco-intro', 'MelcoController@index')->name('melco.intro');
+        Route::get('melco-single-head', 'MelcoController@single')->name('melco.single');
+        Route::get('melco-multi-head', 'MelcoController@multi')->name('melco.multi');
+        Route::get('melco-supplies-accessories', 'MelcoController@accessories')->name('melco.accessories');
+
         Route::get('inkcups-intro', 'InkcupsController@index')->name('inkcups.intro');
         
         Route::get('api/events', 'APIController@events');

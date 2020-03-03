@@ -117,3 +117,102 @@
 .lh-4 {
     line-height: 3rem;
 }
+
+.cornit-text {
+    color: $kornit;
+}
+
+.cornit-bg {
+    background-color: $kornit;
+}
+
+.melco-text {
+    color: $melco;
+}
+
+.melco-bg {
+    background-color: $melco;
+}
+
+.partners-heading {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 50% !important;
+    top: 0;
+    z-index: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    // text-align: center;
+    background-color: red;
+    opacity: 0.7;
+    border-radius: 0 0 0 25%;
+}
+
+.kornit {
+    background-color: #2befc4;
+    margin-top: 30px;
+    border-radius: 20% 0 0 0;
+}
+
+.partners-heading button {
+    background-color: black;
+    color: white;
+    opacity: 1;
+    width: 30%;
+    left: auto;
+    right: auto;
+    z-index: 15;
+}
+
+@media (min-width: 576px) {
+    .partners-heading {
+        width: 50% !important;
+        padding-top: 20px;
+    }
+    .partners-heading h2 {
+        font-size: 1.8rem;
+        color: white;
+    }
+    .partners-heading p {
+        color: white;
+    }
+    .partners-heading button {
+        width: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .partners-heading {
+        width: 35% !important;
+        padding-top: 40px;
+    }
+    .partners-heading h2 {
+        font-size: 2.3rem;
+    }
+    .partners-heading button {
+        width: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .partners-heading {
+        padding-top: 80px;
+        width: 25% !important;
+    }
+    .partners-heading h2 {
+        font-size: 2.8rem;
+    }
+}
+
+@media(min-width: 1200px) {
+    .partners-heading {
+        padding-top: 80px;
+        width: 25% !important;
+    }
+    .partners-heading h2 {
+        font-size: 3rem;
+    }
+}

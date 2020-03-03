@@ -99,10 +99,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         {{-- <li><a tabindex="-1" href="{{route('kornit.intro', app()->getLocale())}}"
                                         class="dropdown-item">Introduction</a>
                                 </li> --}}
-                                <li><a tabindex="-1" href="#" class="dropdown-item">DTG</a></li>
-                                <li><a tabindex="-1" href="#" class="dropdown-item">DTF</a></li>
-                                <li><a tabindex="-1" href="#" class="dropdown-item">Used Machine</a></li>
-                                <li><a tabindex="-1" href="#" class="dropdown-item">Supplies & Accessories</a>
+                                <li><a tabindex="-1" href="{{route('kornit.dtg', app()->getLocale())}}"
+                                        class="dropdown-item">DTG</a></li>
+                                <li><a tabindex="-1" href="{{route('kornit.dtf', app()->getLocale())}}"
+                                        class="dropdown-item">DTF</a></li>
+                                <li><a tabindex="-1" href="{{route('kornit.usedmachine', app()->getLocale())}}"
+                                        class="dropdown-item">Used Machine</a></li>
+                                <li><a tabindex="-1" href="{{route('kornit.accessories', app()->getLocale())}}"
+                                        class="dropdown-item">Supplies & Accessories</a>
                                 </li>
                             </ul>
                         </li>
@@ -112,9 +116,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 class="dropdown-item dropdown-toggle">Melco</a>
                             <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
                                 {{-- <li><a tabindex="-1" href="#" class="dropdown-item">Introduction</a></li> --}}
-                                <li><a tabindex="-1" href="#" class="dropdown-item">Single Head</a></li>
-                                <li><a tabindex="-1" href="#" class="dropdown-item">Multi Head</a></li>
-                                <li><a tabindex="-1" href="#" class="dropdown-item">Supplies & Accessories</a>
+                                <li><a tabindex="-1" href="{{route('melco.single', app()->getLocale())}}"
+                                        class="dropdown-item">Single Head</a></li>
+                                <li><a tabindex="-1" href="{{route('melco.multi', app()->getLocale())}}"
+                                        class="dropdown-item">Multi Head</a></li>
+                                <li><a tabindex="-1" href="{{route('melco.accessories', app()->getLocale())}}"
+                                        class="dropdown-item">Supplies & Accessories</a>
                                 </li>
                             </ul>
                         </li>
