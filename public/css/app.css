@@ -50427,6 +50427,18 @@ readers do not read off random characters that represent icons */
   .partners-heading button {
     width: auto;
   }
+
+  .software {
+    font-size: 1.1rem;
+  }
+
+  .software > div {
+    padding-top: 20px;
+  }
+
+  .accessories > div {
+    padding-top: 20px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -50441,6 +50453,14 @@ readers do not read off random characters that represent icons */
 
   .partners-heading button {
     width: auto;
+  }
+
+  .software > div {
+    padding-top: 40px;
+  }
+
+  .accessories > div {
+    padding-top: 40px;
   }
 }
 
@@ -50464,5 +50484,45 @@ readers do not read off random characters that represent icons */
   .partners-heading h2 {
     font-size: 3rem;
   }
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-tab li {
+  background-color: #e41b13;
+  border-radius: 20px 20px 0 0;
+  font-size: 1rem;
+}
+
+@media (min-width: 576px) {
+  .custom-tab li {
+    width: 25%;
+  }
+}
+
+.custom-tab li a {
+  text-align: center;
+  color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.custom-tab li a.active {
+  text-align: center;
+  color: white;
+  border-radius: 20px 20px 0 0;
 }
 

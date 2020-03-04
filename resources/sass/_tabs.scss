@@ -1,0 +1,27 @@
+.custom-tab {}
+
+.custom-tab li {
+    background-color: $melco;
+    border-radius: 20px 20px 0 0;
+    font-size: 1rem;
+}
+
+@media (min-width: 576px) {
+    .custom-tab li {
+        width: 25%;
+    }
+}
+
+.custom-tab li a {
+    text-align: center;
+    color: white;
+    border-radius: 20px 20px 0 0;
+    // background-color: $melco;
+}
+
+.custom-tab li a.active {
+    text-align: center;
+    color: white;
+    border-radius: 20px 20px 0 0;
+    // background-color: $melco;
+}
