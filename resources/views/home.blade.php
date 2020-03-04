@@ -45,28 +45,28 @@
                 <div class="col-md-3 col-sm-6 d-flex flex-column justify-content-center" data-aos="fade-up"
                     data-aos-delay="100" data-aos-duration="1500">
                     <img class="auto-height-img" src="{{asset('img/home/digital-solution-1.png')}}" alt="">
-                    <a href="#" class="nav-link">
-                        <h4 class="text-center">Direct-to-Garment</h4>
+                    <a href="{{route('kornit.dtf', app()->getLocale())}}" class="nav-link">
+                        <h4 class="text-center">Direct-to-Fabric</h4>
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6 d-flex flex-column justify-content-center" data-aos="fade-up"
                     data-aos-delay="200" data-aos-duration="1500">
                     <img class="auto-height-img" src="{{asset('img/home/digital-solution-2.png')}}" alt="">
-                    <a href="#" class="nav-link">
-                        <h4 class="text-center">Direct-to-Fabric</h4>
+                    <a href="{{route('kornit.dtg', app()->getLocale())}}" class="nav-link">
+                        <h4 class="text-center">Direct-to-Garment</h4>
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6 d-flex flex-column justify-content-center" data-aos="fade-up"
                     data-aos-delay="300" data-aos-duration="1500">
                     <img class="auto-height-img" src="{{asset('img/home/digital-solution-3.png')}}" alt="">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('melco.intro', app()->getLocale())}}" class="nav-link">
                         <h4 class="text-center">Emboridery</h4>
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6 d-flex flex-column justify-content-center" data-aos="fade-up"
                     data-aos-delay="400" data-aos-duration="1500">
                     <img class="auto-height-img" src="{{asset('img/home/digital-solution-4.png')}}" alt="">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('inkcups.intro', app()->getLocale())}}" class="nav-link">
                         <h4 class="text-center">Pad Printing</h4>
                     </a>
                 </div>
