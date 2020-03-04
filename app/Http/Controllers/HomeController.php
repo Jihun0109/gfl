@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Log;
 use App\TblHomeSlide;
+use App\Product;
 
 class HomeController extends Controller
 {
@@ -26,8 +27,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $slides = TblHomeSlide::where(['status'=>'PUBLISHED', 'type'=>'HOME'])->get();       
+        $slides = TblHomeSlide::where(['status'=>'PUBLISHED', 'type'=>'HOME'])->get();
         
-        return view('home')->with('slides', $slides);
+        $garments = Product::whereCategory('GARMENT')->orderBy('index','DESC')->select('id','name','image')->take(3)->get();
+        $fabrics = Product::whereCategory('FABRIC')->orderBy('index','DESC')->select('id','name','image')->take(3)->get();
+        $embroideries = Product::whereCategory('EMBROIDERY')->orderBy('index','DESC')->select('id','name','image')->take(3)->get();
+        $pads = Product::whereCategory('PAD')->orderBy('index','DESC')->select('id','name','image')->take(3)->get();
+        Log::info($garments);
+        return view('home')->with([
+                'slides'=> $slides,
+                'garments'=>$garments,
+                'fabrics'=>$fabrics,
+                'embroideries'=>$embroideries,
+                'pads'=>$pads,
+                ]);
     }
 }

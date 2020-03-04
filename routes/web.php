@@ -54,6 +54,7 @@ Route::group([
         Route::get('melco-multi-head', 'MelcoController@multi')->name('melco.multi');
         Route::get('melco-supplies-accessories', 'MelcoController@accessories')->name('melco.accessories');
 
+        Route::get('product/{product_id}', 'ProductController@detail')->name('product.detail');
         Route::get('inkcups-intro', 'InkcupsController@index')->name('inkcups.intro');
         
         Route::get('api/events', 'APIController@events');

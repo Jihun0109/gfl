@@ -158,108 +158,68 @@
                     <div class="pt-4">
                         <div class="cate-heading">Direct-to-Fabric</div>
                         <div class="row mt-1">
+                            @foreach ($fabrics as $product)
                             <div class="col-md-4">
                                 <div>
-                                    <a href="#" class="small-product">
-                                        <img style="" src="{{asset('img/products/product1.jpg')}}" alt="">
+                                    <a href="{{app()->getLocale()}}/product/{{$product->id}}" class="small-product">
+                                        <img style=""
+                                            src="{{Voyager::image($product->thumbnail('cropped','image')) ?? asset('img/products/noavailable.jpg') }}"
+                                            alt="{{$product->name}}">
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div>
-                                    <a href="#" class="small-product">
-                                        <img style="" src="{{asset('img/products/product1.jpg')}}" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div>
-                                    <a href="#" class="small-product">
-                                        <img style="" src="{{asset('img/products/product1.jpg')}}" alt="">
-                                    </a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
 
                     <div class="pt-4">
                         <div class="cate-heading">Direct-to-Garment</div>
                         <div class="row mt-1">
+                            @foreach ($garments as $product)
                             <div class="col-md-4">
                                 <div>
-                                    <a href="#" class="small-product">
-                                        <img style="" src="{{asset('img/products/product1.jpg')}}" alt="">
+                                    <a href="{{app()->getLocale()}}/product/{{$product->id}}" class="small-product">
+                                        <img style=""
+                                            src="{{Voyager::image($product->thumbnail('cropped','image')) ?? asset('img/products/noavailable.jpg') }}"
+                                            alt="{{$product->name}}">
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div>
-                                    <a href="#" class="small-product">
-                                        <img style="" src="{{asset('img/products/product1.jpg')}}" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div>
-                                    <a href="#" class="small-product">
-                                        <img style="" src="{{asset('img/products/product1.jpg')}}" alt="">
-                                    </a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
 
                     <div class="pt-4">
                         <div class="cate-heading">Embroidery</div>
                         <div class="row mt-1">
+                            @foreach ($embroideries as $product)
                             <div class="col-md-4">
                                 <div>
-                                    <a href="#" class="small-product">
-                                        <img style="" src="{{asset('img/products/product1.jpg')}}" alt="">
+                                    <a href="{{app()->getLocale()}}/product/{{$product->id}}" class="small-product">
+                                        <img style=""
+                                            src="{{Voyager::image($product->thumbnail('cropped','image')) ?? asset('img/products/noavailable.jpg') }}"
+                                            alt="{{$product->name}}">
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div>
-                                    <a href="#" class="small-product">
-                                        <img style="" src="{{asset('img/products/product1.jpg')}}" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div>
-                                    <a href="#" class="small-product">
-                                        <img style="" src="{{asset('img/products/product1.jpg')}}" alt="">
-                                    </a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
 
                     <div class="pt-4">
                         <div class="cate-heading">Pad Printing</div>
                         <div class="row mt-1">
+                            @foreach ($pads as $product)
                             <div class="col-md-4">
                                 <div>
-                                    <a href="#" class="small-product">
-                                        <img style="" src="{{asset('img/products/product1.jpg')}}" alt="">
+                                    <a href="{{app()->getLocale()}}/product/{{$product->id}}" class="small-product">
+                                        <img style=""
+                                            src="{{Voyager::image($product->thumbnail('cropped','image')) ?? asset('img/products/noavailable.jpg') }}"
+                                            alt="{{$product->name}}">
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div>
-                                    <a href="#" class="small-product">
-                                        <img style="" src="{{asset('img/products/product1.jpg')}}" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div>
-                                    <a href="#" class="small-product">
-                                        <img style="" src="{{asset('img/products/product1.jpg')}}" alt="">
-                                    </a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
