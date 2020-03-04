@@ -26,9 +26,13 @@
         </a>
         {{-- <div class="melco-heading d-none d-md-block w-50 ml-auto mr-auto"> --}}
         <div class="partners-heading w-50 ml-auto mr-auto pl-3">
-            <h2>Melco</h2>
-            <p>emboridery</p>
-            <button type="button" class="btn btn-flat d-none d-sm-block">Learn More</button>
+            <div class="mask melco-mask" style="">
+            </div>
+            <div class="melco">
+                <h2>Melco</h2>
+                <h5>emboridery</h5>
+                <button type="button" class="btn btn-flat d-none d-sm-block">Learn More</button>
+            </div>
         </div>
     </div>
 

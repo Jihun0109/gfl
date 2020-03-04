@@ -17,18 +17,19 @@
             @endforeach
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+
         </a>
-        {{-- <div class="melco-heading d-none d-md-block w-50 ml-auto mr-auto"> --}}
-        <div class="partners-heading w-50 ml-auto mr-auto pl-3">
-            <h2>Melco</h2>
-            <p>Software & Accessories</p>
-            <button type="button" class="btn btn-flat d-none d-sm-block">Learn More</button>
+        <div class="partners-heading over-lay-multi w-50 ml-auto mr-auto pl-3">
+            <div class="mask melco-mask" style="">
+            </div>
+            <div class="melco" style="left:20% !important; top: 55% !important;">
+                <h2>Melco</h2>
+                <h5>Software & Accessories</h5>
+                <button type="button" class="btn btn-flat d-none d-sm-block">Learn More</button>
+            </div>
         </div>
     </div>
 

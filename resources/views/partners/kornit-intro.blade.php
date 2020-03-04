@@ -25,10 +25,14 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-        <div class="partners-heading kornit w-50 ml-auto mr-auto pl-3">
-            <h2>Kornit Digital</h2>
-            <h5>Complete Solution On Digital Printing</h5>
-            <button type="button" class="btn btn-flat d-none d-sm-block">Learn More</button>
+        <div class="partners-heading w-50 ml-auto mr-auto pl-3">
+            <div class="mask kornit-mask" style="">
+            </div>
+            <div class="kornit">
+                <h2>Kornit Digital</h2>
+                <h5>Complete Solution On Digital Printing</h5>
+                <button type="button" class="btn btn-flat d-none d-sm-block">Learn More</button>
+            </div>
         </div>
     </div>
 </div>

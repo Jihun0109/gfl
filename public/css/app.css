@@ -50388,21 +50388,82 @@ readers do not read off random characters that represent icons */
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
-  background-color: red;
-  opacity: 0.7;
-  border-radius: 0 0 0 25%;
 }
 
-.kornit {
+.over-lay-dtg {
+  left: 10% !important;
+  right: auto !important;
+}
+
+.over-lay-single {
+  left: 0 !important;
+  right: auto !important;
+}
+
+.over-lay-multi {
+  left: 15% !important;
+  right: auto !important;
+}
+
+.partners-heading .mask {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.85;
+}
+
+.kornit-mask {
+  top: 10% !important;
+  border-radius: 26% 0 0 0;
   background-color: #2befc4;
-  margin-top: 30px;
-  border-radius: 20% 0 0 0;
+}
+
+.melco-mask {
+  border-radius: 0 0 0 26%;
+  background-color: red;
+}
+
+.melco-single-mask {
+  border-radius: 0 0 0 26%;
+  background-color: red;
+  top: 40% !important;
+}
+
+.kornit-dtg-mask {
+  border-radius: 0 0 0 26%;
+  background-color: #2befc4;
+}
+
+.kornit-dtf-mask {
+  top: 25% !important;
+  border-radius: 26% 0 0 0;
+  background-color: #2befc4;
+}
+
+.kornit-acc-mask {
+  top: 5% !important;
+  border-radius: 26% 0 0 26%;
+  background-color: #2befc4;
+}
+
+.partners-heading .kornit {
+  position: absolute;
+  left: 10%;
+  top: 30%;
+}
+
+.partners-heading .melco {
+  position: absolute;
+  left: 10%;
+  top: 30%;
 }
 
 .partners-heading button {
   background-color: black;
   color: white;
-  opacity: 1;
   width: 30%;
   left: auto;
   right: auto;
