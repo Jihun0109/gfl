@@ -1966,6 +1966,67 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -1973,7 +2034,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      selectedDate: new Date(),
+      region: "all",
+      upcomings: {},
+      selectedDate: "",
       attrs: [{
         dot: {
           "class": "high-light-hongkong"
@@ -1991,6 +2054,63 @@ __webpack_require__.r(__webpack_exports__);
         dates: new Date()
       }]
     };
+  },
+  created: function created() {
+    this.loadUpcoming();
+  },
+  methods: {
+    selectDay: function selectDay(obj) {
+      console.log("selectDay", obj);
+
+      if (obj.attributes && obj.attributes.length && obj.attributes[0].customData) {
+        var event_id = obj.attributes[0].customData.id;
+        console.log(event_id);
+        var element = document.getElementById("event-" + event_id); //element.scrollIntoView();
+
+        element.parentNode.scrollTop = element.offsetTop;
+      }
+    },
+    regionClicked: function regionClicked() {
+      console.log(this.region);
+      this.loadUpcoming();
+    },
+    loadUpcoming: function loadUpcoming() {
+      var _this = this;
+
+      axios.get("api/upcoming/" + this.region).then(function (_ref) {
+        var data = _ref.data;
+        console.log(data);
+        _this.upcomings = data;
+        _this.attrs = [];
+
+        for (var i = 0; i < data.length; i++) {
+          var event = data[i];
+          var start_date = new Date(event.start_date);
+          var end_date = event.end_date ? new Date(event.end_date) : start_date;
+          var dot = {
+            dot: {
+              "class": event.hongkong ? "high-light-hongkong" : "high-light-oversea"
+            },
+            dates: start_date,
+            event: event.id
+          };
+
+          if (event.end_date) {
+            for (var d = start_date; d <= end_date; d.setDate(d.getDate() + 1)) {
+              var _dot = {
+                dot: {
+                  "class": event.hongkong ? "high-light-hongkong" : "high-light-oversea"
+                },
+                dates: new Date(d),
+                customData: event
+              };
+
+              _this.attrs.push(_dot);
+            }
+          } else _this.attrs.push(dot);
+        }
+      });
+    }
   }
 });
 
@@ -2005,6 +2125,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2117,6 +2243,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2127,14 +2261,21 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      next_link: ''
+      next_link: "",
+      type: "all"
     };
   },
   methods: {
+    typeClicked: function typeClicked() {
+      console.log("type=", this.type);
+      this.next_link = "";
+      this.$refs.container.innerHTML = "";
+      this.load();
+    },
     load: function load() {
       var _this = this;
 
-      axios.get(this.next_link ? this.next_link : 'api/events').then(function (_ref) {
+      axios.get(this.next_link ? this.next_link : "api/events/" + this.type).then(function (_ref) {
         var data = _ref.data;
         data.data.forEach(function (element, index) {
           var EventClass = vue__WEBPACK_IMPORTED_MODULE_2___default.a.extend(_EventComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
@@ -2148,13 +2289,14 @@ __webpack_require__.r(__webpack_exports__);
 
           _this.$refs.container.appendChild(event.$el);
 
+          event.$el.classList.add("animated", "zoomin");
           console.log(element);
         }); //this.$refs.loadmore.href = data.next_page_url;
 
         if (data.next_page_url === null) {
-          _this.$refs.loadmore.style.display = 'none';
+          _this.$refs.loadmore.style.display = "none";
         } else {
-          _this.next_link = data.next_page_url ? data.next_page_url : '';
+          _this.next_link = data.next_page_url ? data.next_page_url : "";
         }
       });
     }
@@ -6742,7 +6884,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".high-light-hongkong {\n  background-color: #ff6666;\n  border-radius: 50% !important;\n}\n.high-light-oversea {\n  background-color: #214592;\n  border-radius: 50% !important;\n}\n.high-light {\n  background-color: red;\n  border-radius: 10px;\n  opacity: 0.2;\n}\n.event-item a {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n  justify-content: flex-start;\n  align-content: center;\n  align-items: center;\n  padding: 10px 20px 10px 0;\n  color: #1a1a1a;\n  text-decoration: none;\n}\n.event-item .event-date {\n  width: 60px;\n  height: 60px;\n  color: #fff;\n  background: #fb5004;\n  text-align: center;\n  flex: 0 0 auto;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n  justify-content: center;\n  align-content: center;\n  align-items: center;\n  margin-right: 15px;\n}\n.event-item .event-date .days {\n  display: block;\n}\n.event-item .details {\n  width: 100%;\n}\n.event-item .details .info {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n  justify-content: flex-start;\n  align-content: center;\n  align-items: center;\n  margin-bottom: 5px;\n}", ""]);
+exports.push([module.i, ".high-light-hongkong {\n  background-color: #e3342f !important;\n}\n.high-light-oversea {\n  background-color: #214592 !important;\n}\n.event-item a {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n  justify-content: flex-start;\n  align-content: center;\n  align-items: center;\n  padding: 10px 20px 10px 0;\n  color: #1a1a1a;\n  text-decoration: none;\n}\n.event-item .event-date {\n  width: 60px;\n  height: 60px;\n  color: #fff;\n  background: #e3342f;\n  text-align: center;\n  flex: 0 0 auto;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n  justify-content: center;\n  align-content: center;\n  align-items: center;\n  margin-right: 15px;\n}\n.event-item .event-date .days {\n  display: block;\n}\n.event-item .details {\n  width: 100%;\n}\n.event-item .details .info {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n  justify-content: flex-start;\n  align-content: center;\n  align-items: center;\n  margin-bottom: 5px;\n}", ""]);
 
 // exports
 
@@ -55921,12 +56063,130 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm._m(0),
+    _c("div", { staticClass: "text-center" }, [
+      _c("div", [
+        _c(
+          "div",
+          {
+            staticClass: "btn-group btn-group-toggle my-5",
+            attrs: {
+              "data-aos": "zoom-in-up",
+              "data-aos-delay": "100",
+              "data-aos-duration": "800"
+            }
+          },
+          [
+            _c(
+              "label",
+              {
+                staticClass: "btn btn-outline-danger btn-lg",
+                class: { active: _vm.region == "all" },
+                attrs: { for: "all" }
+              },
+              [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.region,
+                      expression: "region"
+                    }
+                  ],
+                  attrs: { type: "radio", value: "all", id: "all" },
+                  domProps: { checked: _vm._q(_vm.region, "all") },
+                  on: {
+                    change: [
+                      function($event) {
+                        _vm.region = "all"
+                      },
+                      _vm.regionClicked
+                    ]
+                  }
+                }),
+                _vm._v("\n          All\n        ")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "btn btn-outline-danger btn-lg",
+                class: { active: _vm.region == "hongkong" },
+                attrs: { for: "hongkong" }
+              },
+              [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.region,
+                      expression: "region"
+                    }
+                  ],
+                  attrs: { type: "radio", value: "hongkong", id: "hongkong" },
+                  domProps: { checked: _vm._q(_vm.region, "hongkong") },
+                  on: {
+                    change: [
+                      function($event) {
+                        _vm.region = "hongkong"
+                      },
+                      _vm.regionClicked
+                    ]
+                  }
+                }),
+                _vm._v("\n          Hong Kong\n        ")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "btn btn-outline-danger btn-lg",
+                class: { active: _vm.region == "other" },
+                attrs: { for: "other" }
+              },
+              [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.region,
+                      expression: "region"
+                    }
+                  ],
+                  attrs: { type: "radio", value: "other", id: "other" },
+                  domProps: { checked: _vm._q(_vm.region, "other") },
+                  on: {
+                    change: [
+                      function($event) {
+                        _vm.region = "other"
+                      },
+                      _vm.regionClicked
+                    ]
+                  }
+                }),
+                _vm._v("\n          Outside Hong Kong\n        ")
+              ]
+            )
+          ]
+        )
+      ])
+    ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row pt-4" }, [
+    _c("div", { staticClass: "row pt-4 mb-4" }, [
       _c(
         "div",
-        { staticClass: "col-md-6 pr-5" },
+        {
+          staticClass: "col-md-6 pr-5",
+          attrs: {
+            "data-aos": "zoom-in-up",
+            "data-aos-delay": "100",
+            "data-aos-duration": "800"
+          }
+        },
         [
           _c("v-date-picker", {
             ref: "calendar",
@@ -55934,8 +56194,9 @@ var render = function() {
               "is-inline": "",
               attributes: _vm.attrs,
               "is-expanded": "",
-              color: "red"
+              "min-date": new Date()
             },
+            on: { dayclick: _vm.selectDay },
             model: {
               value: _vm.selectedDate,
               callback: function($$v) {
@@ -55948,8 +56209,84 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _vm._m(1)
-    ])
+      _c(
+        "div",
+        {
+          staticClass: "col md-6 pl-5 mt-4 mt-md-0",
+          attrs: {
+            "data-aos": "zoom-in-up",
+            "data-aos-delay": "100",
+            "data-aos-duration": "800"
+          }
+        },
+        [
+          _c("h2", [_vm._v("Upcoming Events")]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticStyle: { height: "235px", overflow: "auto" } },
+            _vm._l(_vm.upcomings, function(event) {
+              return _c(
+                "div",
+                {
+                  key: event.id,
+                  staticClass: "event-item",
+                  attrs: { id: "event-" + event.id }
+                },
+                [
+                  _c("a", { attrs: { href: "events/detail/" + event.id } }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "event-date",
+                        class: { "high-light-oversea": !event.hongkong }
+                      },
+                      [
+                        _c("div", [
+                          _c("div", { staticClass: "event-days" }, [
+                            _vm._v(
+                              "\n                  " +
+                                _vm._s(event.start_day) +
+                                "-" +
+                                _vm._s(event.end_day) +
+                                "\n                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "event-days" }, [
+                            _vm._v(_vm._s(event.month))
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "event-detail" }, [
+                      _c("div", { staticClass: "event-info" }, [
+                        _c("b", [_vm._v(_vm._s(event.country) + " |")]),
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(event.start_date) +
+                            " -\n                " +
+                            _vm._s(event.end_date) +
+                            "\n              "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "event-title" }, [
+                        _vm._v(_vm._s(event.title))
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
   ])
 }
 var staticRenderFns = [
@@ -55957,93 +56294,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center" }, [
-      _c("div", [
-        _c(
-          "div",
-          {
-            staticClass: "btn-group btn-group-toggle",
-            attrs: { "data-toggle": "buttons" }
-          },
-          [
-            _c(
-              "label",
-              { staticClass: "btn btn-outline-danger btn-lg active" },
-              [
-                _c("input", {
-                  attrs: {
-                    type: "radio",
-                    name: "options",
-                    id: "option1",
-                    autocomplete: "off",
-                    checked: ""
-                  }
-                }),
-                _vm._v(" All\n        ")
-              ]
-            ),
-            _vm._v(" "),
-            _c("label", { staticClass: "btn btn-outline-danger btn-lg" }, [
-              _c("input", {
-                attrs: {
-                  type: "radio",
-                  name: "options",
-                  id: "option2",
-                  autocomplete: "off"
-                }
-              }),
-              _vm._v(" Hong Kong\n        ")
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "btn btn-outline-danger btn-lg" }, [
-              _c("input", {
-                attrs: {
-                  type: "radio",
-                  name: "options",
-                  id: "option3",
-                  autocomplete: "off"
-                }
-              }),
-              _vm._v(" Outside Hong Kong\n        ")
-            ])
-          ]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col md-6 pl-5" }, [
-      _c("h2", [_vm._v("Upcoming Events")]),
-      _vm._v(" "),
-      _c("div", { staticStyle: { height: "235px", overflow: "auto" } }, [
-        _c("div", { staticClass: "event-item" }, [
-          _c("a", { attrs: { href: "#" } }, [
-            _c("div", { staticClass: "event-date" }, [
-              _c("div", [
-                _c("div", { staticClass: "event-days" }, [_vm._v("23-56")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "event-days" }, [_vm._v("23-56")])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "event-detail" }, [
-              _c("div", { staticClass: "event-info" }, [
-                _c("b", [_vm._v("Italy |")]),
-                _vm._v(" 29.02.2020 - 02-03.2020 ")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "event-title" }, [
-                _vm._v(
-                  "MIDO - International Optics, Optometry and Ophthalmology Exhibition, Milan"
-                )
-              ])
-            ])
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "justify-content-center row" }, [
+      _c("div", {
+        staticClass: "high-light-hongkong rounded-circle mt-2 mr-3",
+        staticStyle: { width: "8px", height: "8px" }
+      }),
+      _vm._v("Hong Kong\n    "),
+      _c("div", {
+        staticClass: "high-light-oversea rounded-circle mt-2 mx-3",
+        staticStyle: { width: "8px", height: "8px" }
+      }),
+      _vm._v("Outside Hong Kong\n  ")
     ])
   }
 ]
@@ -56076,14 +56337,46 @@ var render = function() {
         class: { "order-2": _vm.flag, "pl-0": _vm.flag, "pr-0": !_vm.flag }
       },
       [
-        _c("div", { staticClass: "col-12", staticStyle: { padding: "0" } }, [
-          _c("a", { attrs: { href: _vm.detail_url } }, [
-            _c("img", {
-              staticClass: "product-image",
-              attrs: { src: "../storage/" + _vm.object["image"], alt: "" }
-            })
-          ])
-        ])
+        _c(
+          "div",
+          {
+            staticClass: "col-12 view overlay zoom",
+            staticStyle: { padding: "0" }
+          },
+          [
+            _c(
+              "a",
+              {
+                staticStyle: { "z-index": "5" },
+                attrs: { href: _vm.detail_url }
+              },
+              [
+                _c("img", {
+                  staticClass: "product-image",
+                  attrs: { src: "../storage/" + _vm.object["image"], alt: "" }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "mask justify-content-center",
+                staticStyle: { "background-color": "rgba(244,67,54,0.6)" }
+              },
+              [
+                _c("a", {
+                  staticStyle: {
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%"
+                  },
+                  attrs: { href: _vm.detail_url }
+                })
+              ]
+            )
+          ]
+        )
       ]
     ),
     _vm._v(" "),
@@ -56094,23 +56387,37 @@ var render = function() {
         class: { "pl-5": _vm.flag, "pr-4": !_vm.flag }
       },
       [
-        _c("div", { staticStyle: { height: "100%" } }, [
-          _c("h3", { staticClass: "my-3" }, [
-            _c("b", [_vm._v(_vm._s(_vm.data.title))])
-          ]),
-          _vm._v(" "),
-          _c("small", [_vm._v(_vm._s(_vm.data.start_date))]),
-          _vm._v(" "),
-          _c("div", {}, [
-            _vm._v(_vm._s(_vm._f("truncate")(_vm.data.description, 300, "...")))
-          ])
-        ]),
+        _c(
+          "a",
+          {
+            staticClass: "nav-item",
+            staticStyle: { "text-decoration": "none", color: "#555" },
+            attrs: { href: _vm.detail_url }
+          },
+          [
+            _c("div", { staticStyle: { height: "100%" } }, [
+              _c("h3", { staticClass: "mt-3" }, [
+                _c("b", [_vm._v(_vm._s(_vm.data.title))])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "mb-3" }, [
+                _vm._v(_vm._s(_vm.data.start_date))
+              ]),
+              _vm._v(" "),
+              _c("h5", { staticClass: "pt-3" }, [
+                _vm._v(
+                  _vm._s(_vm._f("truncate")(_vm.data.description, 300, "..."))
+                )
+              ])
+            ])
+          ]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "pb-4" }, [
+        _c("div", { staticClass: "p-4 text-center" }, [
           _c(
             "a",
             {
-              staticClass: "btn btn-sm btn-primary",
+              staticClass: "btn btn-default",
               staticStyle: { bottom: "20px" },
               attrs: { href: _vm.detail_url, type: "button " }
             },
@@ -56149,19 +56456,183 @@ var render = function() {
         _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "d-flex justify-content-center mt-4" }, [
-          _c("div", { staticClass: "col-md-12" }, [_c("calendar-component")], 1)
+          _c(
+            "div",
+            { staticClass: "px-md-4 col-md-10" },
+            [_c("calendar-component")],
+            1
+          )
         ]),
         _vm._v(" "),
-        _vm._m(1),
+        _c("div", { staticClass: "text-center mt-5" }, [
+          _c("div", { staticClass: "justify-content-center" }, [
+            _c("div", { staticClass: "btn-group btn-group-toggle" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "btn btn-outline-danger",
+                  class: { active: _vm.type == "all" }
+                },
+                [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.type,
+                        expression: "type"
+                      }
+                    ],
+                    attrs: { type: "radio", value: "all" },
+                    domProps: { checked: _vm._q(_vm.type, "all") },
+                    on: {
+                      change: [
+                        function($event) {
+                          _vm.type = "all"
+                        },
+                        _vm.typeClicked
+                      ]
+                    }
+                  }),
+                  _vm._v(" All\n            ")
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "btn btn-outline-danger",
+                  class: { active: _vm.type == "blogs" }
+                },
+                [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.type,
+                        expression: "type"
+                      }
+                    ],
+                    attrs: { type: "radio", value: "blogs" },
+                    domProps: { checked: _vm._q(_vm.type, "blogs") },
+                    on: {
+                      change: [
+                        function($event) {
+                          _vm.type = "blogs"
+                        },
+                        _vm.typeClicked
+                      ]
+                    }
+                  }),
+                  _vm._v(" Blogs\n            ")
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "btn btn-outline-danger",
+                  class: { active: _vm.type == "events" }
+                },
+                [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.type,
+                        expression: "type"
+                      }
+                    ],
+                    attrs: { type: "radio", value: "events" },
+                    domProps: { checked: _vm._q(_vm.type, "events") },
+                    on: {
+                      change: [
+                        function($event) {
+                          _vm.type = "events"
+                        },
+                        _vm.typeClicked
+                      ]
+                    }
+                  }),
+                  _vm._v(" Events\n            ")
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "btn btn-outline-danger",
+                  class: { active: _vm.type == "news" }
+                },
+                [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.type,
+                        expression: "type"
+                      }
+                    ],
+                    attrs: { type: "radio", value: "news" },
+                    domProps: { checked: _vm._q(_vm.type, "news") },
+                    on: {
+                      change: [
+                        function($event) {
+                          _vm.type = "news"
+                        },
+                        _vm.typeClicked
+                      ]
+                    }
+                  }),
+                  _vm._v(" News &\n              Announcements\n            ")
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "btn btn-outline-danger",
+                  class: { active: _vm.type == "reports" }
+                },
+                [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.type,
+                        expression: "type"
+                      }
+                    ],
+                    attrs: { type: "radio", value: "reports" },
+                    domProps: { checked: _vm._q(_vm.type, "reports") },
+                    on: {
+                      change: [
+                        function($event) {
+                          _vm.type = "reports"
+                        },
+                        _vm.typeClicked
+                      ]
+                    }
+                  }),
+                  _vm._v(" Reports & Insights\n            ")
+                ]
+              )
+            ])
+          ])
+        ]),
         _vm._v(" "),
-        _c("div", { ref: "container", staticClass: "pt-3" }),
+        _c("div", { ref: "container", staticClass: "mt-3 mt-sm-5" }),
         _vm._v(" "),
-        _c("div", { staticClass: "d-flex justify-content-center py-4" }, [
+        _c("div", { staticClass: "row justify-content-center py-5 mt-md-4" }, [
           _c(
             "a",
             {
               ref: "loadmore",
-              staticClass: "btn btn-sm btn-success",
+              staticClass: "btn btn-lg btn-danger",
               staticStyle: { color: "white" },
               on: { click: _vm.load }
             },
@@ -56177,89 +56648,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d-flex justify-content-center pt-5" }, [
-      _c("h1", [_vm._v("GFL Events & Insights")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center mt-5" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c(
-          "div",
-          {
-            staticClass: "btn-group btn-group-toggle",
-            attrs: { "data-toggle": "buttons" }
-          },
-          [
-            _c("label", { staticClass: "btn btn-outline-danger active" }, [
-              _c("input", {
-                attrs: {
-                  type: "radio",
-                  name: "options",
-                  id: "option1",
-                  autocomplete: "off",
-                  checked: ""
-                }
-              }),
-              _vm._v(" All\n                        ")
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "btn btn-outline-danger" }, [
-              _c("input", {
-                attrs: {
-                  type: "radio",
-                  name: "options",
-                  id: "option2",
-                  autocomplete: "off"
-                }
-              }),
-              _vm._v(" Blogs\n                        ")
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "btn btn-outline-danger" }, [
-              _c("input", {
-                attrs: {
-                  type: "radio",
-                  name: "options",
-                  id: "option3",
-                  autocomplete: "off"
-                }
-              }),
-              _vm._v(" Events\n                        ")
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "btn btn-outline-danger" }, [
-              _c("input", {
-                attrs: {
-                  type: "radio",
-                  name: "options",
-                  id: "option2",
-                  autocomplete: "off"
-                }
-              }),
-              _vm._v(
-                " News &\n                            Announcements\n                        "
-              )
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "btn btn-outline-danger" }, [
-              _c("input", {
-                attrs: {
-                  type: "radio",
-                  name: "options",
-                  id: "option2",
-                  autocomplete: "off"
-                }
-              }),
-              _vm._v(" Reports & Insights\n                        ")
-            ])
-          ]
-        )
-      ])
-    ])
+    return _c(
+      "div",
+      {
+        staticClass: "d-flex justify-content-center pt-5",
+        attrs: {
+          "data-aos": "zoom-in-up",
+          "data-aos-delay": "100",
+          "data-aos-duration": "800"
+        }
+      },
+      [_c("h1", [_vm._v("GFL Events & Insights")])]
+    )
   }
 ]
 render._withStripped = true

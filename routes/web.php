@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function(){
-    return redirect(app()->getLocale());
-});
+Route::get('/', 'HomeController@root')->name('root');
+
+//Route::get('translations', 'HomeController@translations')->name('trans');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -57,7 +57,8 @@ Route::group([
         Route::get('product/{product_id}', 'ProductController@detail')->name('product.detail');
         Route::get('inkcups-intro', 'InkcupsController@index')->name('inkcups.intro');
         
-        Route::get('api/events', 'APIController@events');
+        Route::get('api/events/{type}', 'APIController@events');
+        Route::get('api/upcoming/{region}', 'APIController@upcoming');
 
         Route::get('api/test', 'APIController@test');
 });

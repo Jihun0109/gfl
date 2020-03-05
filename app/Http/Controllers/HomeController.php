@@ -20,6 +20,15 @@ class HomeController extends Controller
         //$this->middleware('auth');
     }
 
+    public function translations()
+    {        
+        return view('vendor/translation-manager');
+    }
+
+    public function root()
+    {
+        return redirect(app()->getLocale());
+    }
     /**
      * Show the application dashboard.
      *

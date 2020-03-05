@@ -1,29 +1,35 @@
 <template>
   <div class="row d-flex">
     <div class="col-12 col-sm-6" v-bind:class="{'order-2': flag, 'pl-0': flag, 'pr-0':!flag}">
-      <div class="col-12" style="padding:0;">
-        <a v-bind:href="detail_url">
+      <div class="col-12 view overlay zoom" style="padding:0;">
+        <a v-bind:href="detail_url" style="z-index:5;">
           <img class="product-image" v-bind:src="'../storage/' + object['image']" alt />
         </a>
+        <div class="mask justify-content-center" style="background-color: rgba(244,67,54,0.6);">
+          <!-- <p class="text-white row align-items-center">Detail</p> -->
+          <a v-bind:href="detail_url" style="position: absolute;width:100%; height:100%"></a>
+        </div>
       </div>
     </div>
     <div
       class="col-12 col-sm-6 pl-4 d-flex flex-column"
       v-bind:class="{'pl-5': flag, 'pr-4': !flag}"
     >
-      <div style="height:100%">
-        <h3 class="my-3">
-          <b>{{data.title}}</b>
-        </h3>
-        <small>{{data.start_date}}</small>
-        <!-- <div v-html="data.description | truncate(300, '...')"> </div> -->
-        <div class>{{data.description | truncate(300, '...')}}</div>
-      </div>
-      <div class="pb-4">
+      <a class="nav-item" v-bind:href="detail_url" style="text-decoration:none;color:#555;">
+        <div style="height:100%">
+          <h3 class="mt-3">
+            <b>{{data.title}}</b>
+          </h3>
+          <span class="mb-3">{{data.start_date}}</span>
+          <!-- <div v-html="data.description | truncate(300, '...')"> </div> -->
+          <h5 class="pt-3">{{data.description | truncate(300, '...')}}</h5>
+        </div>
+      </a>
+      <div class="p-4 text-center">
         <a
           v-bind:href="detail_url"
           type="button "
-          class="btn btn-sm btn-primary"
+          class="btn btn-default"
           style="bottom: 20px;"
         >Read More</a>
       </div>

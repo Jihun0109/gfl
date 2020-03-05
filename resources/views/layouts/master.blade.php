@@ -69,12 +69,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Left navbar links -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="{{ route('home', app()->getLocale()) }}" class="nav-link">{{ __('Home') }}</a>
+                            <a href="{{ route('home', app()->getLocale()) }}"
+                                class="nav-link">{{ trans('nav-menu.Home')}}</a>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false" class="nav-link dropdown-toggle">Solution</a>
+                                aria-expanded="false"
+                                class="nav-link dropdown-toggle">{{ trans('nav-menu.Solutions')}}</a>
                             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
                                 <li><a href="{{route('solutions.startups', app()->getLocale())}}"
                                         class="dropdown-item">Start-ups </a></li>
@@ -89,7 +91,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <li class="nav-item dropdown">
                             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false" class="nav-link dropdown-toggle">Partners</a>
+                                aria-expanded="false"
+                                class="nav-link dropdown-toggle">{{ trans('nav-menu.Partners')}}</a>
                             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
                                 <li class="dropdown-submenu dropdown-hover">
                                     <a id="dropmenu-kornit" href="{{route('kornit.intro', app()->getLocale())}}"
@@ -141,7 +144,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </li>
                     <li class="nav-item dropdown">
                         <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false" class="nav-link dropdown-toggle">News & Insights</a>
+                            aria-expanded="false"
+                            class="nav-link dropdown-toggle">{{trans('nav-menu.News and Insights')}}</a>
                         <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
                             <li><a href="{{route('events.index', app()->getLocale())}}" class="dropdown-item">News</a>
                             </li>
@@ -157,7 +161,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#" class="nav-link">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('contact', app()->getLocale())}}" class="nav-link">Contact Us</a>
+                        <a href="{{route('contact', app()->getLocale())}}"
+                            class="nav-link">{{ trans('nav-menu.Contact us')}}</a>
                     </li>
                     </ul>
 
@@ -181,7 +186,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         <!-- /.content-wrapper -->
 
-
+        <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
         <!-- Main Footer -->
         <footer class="main-footer" style="background-image: linear-gradient(-90deg, #4e6dde,#6ecbe9 )">
             <div class="d-flex justify-content-between" style="color:white;">
