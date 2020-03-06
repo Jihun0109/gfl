@@ -61,4 +61,6 @@ Route::group([
         Route::get('api/upcoming/{region}', 'APIController@upcoming');
 
         Route::get('api/test', 'APIController@test');
+
+        Route::get('test-cards','TestController@testCards')->name('test.testCards');
 });
