@@ -5,6 +5,8 @@
  */
 
 require('./bootstrap');
+require('./perspective3dcard');
+
 window.AOS = require('aos');
 window.AOS.init();
 
@@ -30,6 +32,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('event-home-component', require('./components/EventHomeComponent.vue').default);
 Vue.component('calendar-component', require('./components/CalendarComponent.vue').default);
 Vue.component('event-component', require('./components/EventComponent.vue').default);
+
+Vue.component('card', require('./components/Card.vue').default);
 
 var filter = function(text, length, clamp) {
     clamp = clamp || '...';

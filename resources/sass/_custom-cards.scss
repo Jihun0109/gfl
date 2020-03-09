@@ -79,3 +79,165 @@
         opacity: 0;
     }
 }
+
+// **** Box content ****** //
+.boxed-content {
+    background: #93cacd;
+    padding: 35px;
+    display: inline-block;
+    position: relative;
+}
+
+.boxed-content h2 {
+    font: 700 12px/20px "Oswald";
+    color: #fff;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.boxed-content h2.center {
+    text-align: center;
+}
+
+.boxed-content h2:after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 1px;
+    background: #fff;
+    bottom: 0px;
+    left: 0px;
+}
+
+.boxed-content p {
+    font: 400 13px/25px "Poppins";
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.boxed-content.images {
+    padding: 0px;
+    background: #f5f5f5;
+    border: 1px solid #eaeaea;
+}
+
+.boxed-content.images p,
+.boxed-content.images h2 {
+    max-width: 250px;
+    padding-left: 35px;
+}
+
+.boxed-content.images p:after,
+.boxed-content.images h2:after {
+    left: 35px;
+}
+
+.boxed-content.images p {
+    color: #858585;
+}
+
+.boxed-content.images h2 {
+    color: #000;
+}
+
+.boxed-content.images h2:after {
+    background: #d9d9d9;
+}
+
+.boxed-content.images img {
+    float: right;
+    max-width: 290px;
+}
+
+.boxed-content.images .text {
+    float: left;
+    margin-top: 30px;
+}
+
+.boxed-content.center {
+    text-align: center;
+}
+
+.boxed-content.center h2:after {
+    left: 50%;
+    margin-left: -25px;
+}
+
+.boxed-content.boxed-content-v2 {
+    background: #f5f5f5;
+    padding: 50px 70px;
+}
+
+.boxed-content.boxed-content-v2 p {
+    color: #858585;
+}
+
+.boxed-content.boxed-content-v2 h2 {
+    color: #000;
+}
+
+.boxed-content.boxed-content-v2 h2:after {
+    background: #d9d9d9;
+}
+
+.boxed-content.boxed-content-v3 {
+    background: #e6bdad;
+    padding-top: 65px;
+}
+
+.boxed-content .icons {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 74px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    background: #e95252;
+    border: 3px solid #f8abab;
+    position: absolute;
+}
+
+.boxed-content .icons.bg-black {
+    background: #000;
+    border: 3px solid #a18479;
+}
+
+.boxed-content .icons.left,
+.boxed-content .icons.right {
+    left: -40px;
+    top: 50%;
+    margin-top: -40px;
+}
+
+.boxed-content .icons.right {
+    left: inherit;
+    right: -40px;
+}
+
+.boxed-content .icons.top,
+.boxed-content .icons.bottom {
+    left: 50%;
+    margin-left: -40px;
+    top: -40px;
+}
+
+.boxed-content .icons.bottom {
+    top: inherit;
+    bottom: -40px;
+}
+
+.product-thumb {
+    padding: 10px;
+    .image-holder {
+        position: relative;
+        img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+        }
+    }
+}

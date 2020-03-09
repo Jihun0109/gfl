@@ -145,8 +145,9 @@
                 </div>
             </div>
 
-            <div class="row mt-6"
-                style="background-image: url('{{asset('img/home/woman.png')}}'); background-size: cover; background-repeat: no-repeat; ">
+            <div class="row mt-6">
+                <img class="d-none d-md-block" style="position: absolute;" src="{{asset('img/home/woman5.png')}}" alt=""
+                    data-aos="zoom-out" data-aos-delay="300" data-aos-duration="1000">
                 <div class="col-md-5"> </div>
                 <div class="col-md-7 d-flex flex-column" style="color:#416afe;">
                     <div class="mt-6" style="font-size:3vw; margin-top:30px;"><span>MORE APPLICATIONS</span></div>

@@ -28,8 +28,8 @@
             </a>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
+    <div class="container ">
+        <div class="row mt-5 pt-5">
             <div class="col-sm-3 text-center" data-aos="fade-up-right">
                 <img class="auto-height-img align-self-center justify-content-center"
                     src="{{asset('img/startup/moneypack.png')}}" alt="" style="max-width:50vw;">
@@ -45,45 +45,42 @@
                     src="{{asset('img/startup/wecanoffer.png')}}" alt="" style="max-width:50vw;">
             </div>
         </div>
-        <div class="row" data-aos="fade-up">
-            <div class="col-sm">
+        <div class="row pt-5 mt-5" data-aos="fade-up">
+            <div class="col-md">
                 <div class="card-body box-profile">
-                    <div class="text-center">
-                        <img class="product-img img-fluid" src="{{asset('img/products/product2.jpg')}}"
+                    <div class="text-center banner-effect">
+                        <img class="product-img img-fluid" src="{{asset('img/test/blog11.jpg')}}"
                             alt="User profile picture">
                     </div>
 
-                    <h3 class="profile-username text-center">Avalanche HD6</h3>
-                    <p class="text-muted text-center">Software Engineer</p>
+                    <h3 class="profile-username text-center">Kornit Breeze</h3>
                     <a href="#" class="btn btn-primary btn-block"><b>Learn more</b></a>
                 </div>
             </div>
-            <div class="col-sm">
+            <div class="col-md">
                 <div class="card-body box-profile">
-                    <div class="text-center">
-                        <img class="product-img img-fluid" src="{{asset('img/products/product2.jpg')}}"
+                    <div class="text-center banner-effect">
+                        <img class="product-img img-fluid" src="{{asset('img/test/blog1.jpg')}}"
                             alt="User profile picture">
                     </div>
 
-                    <h3 class="profile-username text-center">Avalanche HD6</h3>
-                    <p class="text-muted text-center">Software Engineer</p>
+                    <h3 class="profile-username text-center">"No" experience needed Melco EMT16X"</h3>
                     <a href="#" class="btn btn-primary btn-block"><b>Learn more</b></a>
                 </div>
             </div>
-            <div class="col-sm">
+            <div class="col-md">
                 <div class="card-body box-profile">
-                    <div class="text-center">
-                        <img class="product-img img-fluid" src="{{asset('img/products/product2.jpg')}}"
+                    <div class="text-center banner-effect">
+                        <img class="product-img img-fluid" src="{{asset('img/test/blog6.jpg')}}"
                             alt="User profile picture">
                     </div>
 
-                    <h3 class="profile-username text-center">Avalanche HD6</h3>
-                    <p class="text-muted text-center">Software Engineer</p>
+                    <h3 class="profile-username text-center">Inkcups B-100</h3>
                     <a href="#" class="btn btn-primary btn-block"><b>Learn more</b></a>
                 </div>
             </div>
         </div>
-        <div class="row" data-aos="fade-up">
+        <div class="row pt-5 mt-5" data-aos="fade-up">
             <div class="col-sm-3 text-center">
                 <img class="auto-height-img align-self-center justify-content-center"
                     src="{{asset('img/startup/wecanoffer.png')}}" alt="" style="max-width:50vw;">
@@ -101,7 +98,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" data-aos="fade-up">
+        <div class="row pt-5 pt-5" data-aos="fade-up">
             <div class="col-sm">
                 <div class="card-body box-profile">
                     <div class="text-center">
@@ -139,7 +136,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" data-aos="fade-up">
+        <div class="row pt-5 pt-5" data-aos="fade-up">
             <div class="col-sm-3 text-center order-12">
                 <img class="auto-height-img align-self-center justify-content-center"
                     src="{{asset('img/startup/wecanoffer.png')}}" alt="" style="max-width:50vw;">
@@ -157,7 +154,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" data-aos="fade-up">
+        <div class="row pt-5 pt-5" data-aos="fade-up">
             <div class="col-sm">
                 <div class="card-body box-profile">
                     <div class="text-center">
@@ -195,10 +192,10 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center" data-aos="fade-up">
+        <div class="row justify-content-center pt-5 pt-5" data-aos="fade-up">
             <h1>Case studies</h1>
         </div>
-        <div class="row">
+        <div class="row pt-5 pt-5">
             <div class="col-sm" data-aos="fade-right">
                 <div class="row mx-4">
                     <img class="auto-height-img align-self-center justify-content-center"
