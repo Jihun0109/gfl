@@ -50267,17 +50267,33 @@ readers do not read off random characters that represent icons */
 }
 
 .small-product img {
-  border: 3px solid #adb5bd;
+  border: 1px solid #3490dc;
   margin: 0 auto;
   padding: 3px;
   width: 100%;
 }
 
 .product-img {
-  border: 3px solid #adb5bd;
+  border: 1px solid #3490dc;
   margin: 0 auto;
   padding: 3px;
   width: 100%;
+}
+
+.home-image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+}
+
+@media (max-width: 768px) {
+  .home-image {
+    opacity: 0.3;
+  }
+
+  .small-product img {
+    margin-top: 10px;
+  }
 }
 
 .social-links {

@@ -77,7 +77,7 @@
             </div>
             <div class="row pt-5">
                 <div class="col-md-6" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1500">
-                    <img class="auto-height-img" src="{{asset('img/home/startup.png')}}" alt="">
+                    <img class="home-image" src="{{asset('img/home/startup.png')}}" alt="">
                 </div>
                 <div class="col-md-6" data-aos="fade-left" data-aos-delay="0" data-aos-duration="1000">
                     <h1 style="color:#12f2be;"><strong>START UP</strong></h1>
@@ -94,7 +94,7 @@
             </div>
             <div class="row brand pt-5 pb-4" style="background-color:#f4f6f9;">
                 <div class="col-md-6 order-md-12" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1500">
-                    <img src="{{asset('img/home/brand.png')}}" alt="">
+                    <img class="home-image" src="{{asset('img/home/brand.png')}}" alt="">
                 </div>
                 <div class="col-md-6 pl-md-5" data-aos="fade-left" data-aos-delay="0" data-aos-duration="1000">
                     <h1 style="color:#416afe;"><strong>BRAND</strong></h1>
@@ -113,7 +113,7 @@
 
             <div class="row mt-5">
                 <div class="col-md-6" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1500">
-                    <img class="auto-height-img" src="{{asset('img/home/e-commerce.png')}}" alt="">
+                    <img class="home-image" src="{{asset('img/home/e-commerce.png')}}" alt="">
                 </div>
                 <div class="col-md-6" data-aos="fade-left" data-aos-delay="0" data-aos-duration="1000">
                     <h1 style="color:#14c1f7;"><strong>E-commerce</strong></h1>
@@ -129,7 +129,7 @@
 
             <div class="row brand pt-5 pb-4" style="background-color:#f4f6f9;">
                 <div class="col-md-6 order-md-12" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1500">
-                    <img class="auto-height-img" src="{{asset('img/home/industrial.png')}}" alt="">
+                    <img class="home-image" src="{{asset('img/home/industrial.png')}}" alt="">
                 </div>
                 <div class="col-md-6 pl-sm-5" data-aos="fade-left" data-aos-delay="0" data-aos-duration="1000">
                     <h1 style="color:#1c2f71;"><strong>Industrial</strong></h1>
@@ -227,53 +227,53 @@
 
             </div>
 
-            <div class="container mt-5" style="padding: 8px !important;">
+            <div class="container mt-5 pt-5" style="">
                 <div class="row" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="1000">
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="card-body box-profile">
-                            <div class="text-center">
+                            <div class="text-center banner-effect">
                                 <img class="product-img img-fluid" src="{{asset('img/products/product2.jpg')}}"
                                     alt="User profile picture">
                             </div>
 
                             <h3 class="profile-username text-center">Avalanche HD6</h3>
-                            <p class="text-muted text-center">Software Engineer</p>
+                            <p class="text-muted text-center"></p>
                             <a href="#" class="btn btn-primary btn-block"><b>Learn more</b></a>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="card-body box-profile">
-                            <div class="text-center">
+                            <div class="text-center banner-effect">
                                 <img class="product-img img-fluid" src="{{asset('img/products/product2.jpg')}}"
                                     alt="User profile picture">
                             </div>
 
                             <h3 class="profile-username text-center">Avalanche HD6</h3>
-                            <p class="text-muted text-center">Software Engineer</p>
+                            <p class="text-muted text-center"></p>
                             <a href="#" class="btn btn-primary btn-block"><b>Learn more</b></a>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="card-body box-profile">
-                            <div class="text-center">
+                            <div class="text-center banner-effect">
                                 <img class="product-img img-fluid" src="{{asset('img/products/product2.jpg')}}"
                                     alt="User profile picture">
                             </div>
 
                             <h3 class="profile-username text-center">Certified Used Machine</h3>
-                            <p class="text-muted text-center">Software Engineer</p>
+                            <p class="text-muted text-center"></p>
                             <a href="#" class="btn btn-primary btn-block"><b>Learn more</b></a>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="card-body box-profile">
-                            <div class="text-center">
+                            <div class="text-center banner-effect">
                                 <img class="product-img img-fluid" src="{{asset('img/products/product2.jpg')}}"
                                     alt="User profile picture">
                             </div>
 
                             <h3 class="profile-username text-center">Certified Used Machine</h3>
-                            <p class="text-muted text-center">Software Engineer</p>
+                            <p class="text-muted text-center"></p>
                             <a href="#" class="btn btn-primary btn-block"><b>Learn more</b></a>
                         </div>
                     </div>
