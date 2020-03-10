@@ -199,10 +199,10 @@
             <h1>Case studies</h1>
         </div>
         <div class="row">
-            <div class="col-sm" data-aos="fade-right">
-                <div class="row mx-4">
+            <div class="col-sm" data-aos="fade-right" style="margin-top:auto; margin-bottom:auto;">
+                <div class="row mx-4" style="">
                     <img class="auto-height-img align-self-center justify-content-center"
-                        src="{{asset('img/ecommerce/imagemagic.png')}}" alt="">
+                        src="{{asset('img/ecommerce/im_logo_2018.png')}}" alt="">
                 </div>
             </div>
             <div class="col-sm" data-aos="fade-left">

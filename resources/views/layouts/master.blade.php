@@ -158,7 +158,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#" class="nav-link">Support</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">About Us</a>
+                        <a href="{{route('about', app()->getLocale())}}" class="nav-link">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('contact', app()->getLocale())}}"

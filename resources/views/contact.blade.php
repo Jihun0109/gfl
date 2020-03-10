@@ -2,10 +2,13 @@
 
 @section('content')
 <div class="container">
+    <div>
+        <img class="img-fluid" src="{{asset('img/contact/main.png')}}" alt="">
+    </div>
+</div>
+<div class="container mt-5">
     <div class="d-flex flex-column" style="font-size:1.3rem;">
-        <div>
-            <img class="img-fluid" src="{{asset('img/contact/main.png')}}" alt="">
-        </div>
+
         <div class="card-body">
             <h1>We are always here to help you</h1>
             <div class="row">
@@ -211,17 +214,15 @@
                 <div class="col-md-6">
                     <img src="{{asset('img/contact/world.png')}}" alt="">
                 </div>
-                <div class="col-md-6" style="margin-top:50px; font-size: 1.3rem;"><span>Noticing the rising demand in
+                <div class="col-md-6" style="font-size: 1.3rem; margin-top: auto; margin-bottom: auto;">
+                    <div class="row align-items-center">Noticing the rising demand in
                         the Vietnamese apparel & textile market, we're planning to set up a branch office in Vietnam to
-                        support our customers.</span></div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-12">
-                    <h1>Subscribe Newsletter</h1>
+                        support our customers.</div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
+            <div class="row" style="position: relative; padding-bottom:50px; margin-top: 80px;">
+                <div class="col-md-6 my-3" style="z-index:1;">
+                    <h1>Subscribe Newsletter</h1>
                     <p style="font-size:1.3rem;">Be the first to receive exclusive offers and the latest news on our
                         porducts and services directly in your inbox.</p>
                     <div class="input-group mb-0">
@@ -231,7 +232,9 @@
                         </div>
                     </div>
                 </div>
+                <img class="back-svg" src="{{asset('img/contact/undraw_contact_us_15o2.svg')}}" alt="">
             </div>
+
         </div>
     </div>
 </div>

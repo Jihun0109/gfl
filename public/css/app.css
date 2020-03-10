@@ -51019,9 +51019,23 @@ readers do not read off random characters that represent icons */
   right: 0;
 }
 
-/*----------------------------------
-32 - Banners
-----------------------------------*/
+.back-svg {
+  position: absolute;
+  width: 65%;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .back-svg {
+    width: 98%;
+  }
+}
+
+.desc-font {
+  font-size: 18px;
+}
 
 .custom-tab li {
   background-color: #e41b13;

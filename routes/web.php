@@ -34,6 +34,7 @@ Route::group([
         Route::get('/', 'HomeController@index')->name('home');
 
         Route::get('contact', 'ContactController@index')->name('contact');
+        Route::get('about', 'AboutController@index')->name('about');
 
         Route::get('events', 'EventController@index')->name('events.index');
         Route::get('events/detail/{event_id}', 'EventController@detail')->name('events.detail');

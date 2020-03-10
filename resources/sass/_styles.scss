@@ -1,6 +1,6 @@
 .layout-top-nav .wrapper .main-header .brand-image {
-    margin-top: -.5rem;
-    margin-right: .2rem;
+    margin-top: -0.5rem;
+    margin-right: 0.2rem;
     height: auto;
 }
 
@@ -302,7 +302,7 @@
     }
 }
 
-@media(min-width: 1200px) {
+@media (min-width: 1200px) {
     .partners-heading {
         padding-top: 80px;
         width: 25% !important;
@@ -344,7 +344,7 @@
 
 .posts-list:after {
     clear: both;
-    content: '';
+    content: "";
     display: block;
 }
 
@@ -378,7 +378,7 @@
 
 .posts-i .posts-i-img:after {
     position: absolute;
-    content: '';
+    content: "";
     display: block;
     top: 0;
     left: 0;
@@ -441,7 +441,7 @@
     display: block;
     font-size: 28px;
     line-height: 1;
-    font-family: 'PT Serif', Roboto, sans-serif;
+    font-family: "PT Serif", Roboto, sans-serif;
     font-weight: 700;
     margin: 0 0 1px;
 }
@@ -464,7 +464,7 @@
 }
 
 .posts-i .posts-i-ttl {
-    font-family: 'PT Serif', Roboto, sans-serif;
+    font-family: "PT Serif", Roboto, sans-serif;
     font-size: 19px;
     font-weight: 700;
     margin: 0;
@@ -629,7 +629,7 @@
 
 .banners-list:after {
     clear: both;
-    content: '';
+    content: "";
     display: block;
 }
 
@@ -746,7 +746,7 @@
 }
 
 .banners-list .banner-i.style_11 .banner-i-link a:after {
-    content: '\f105';
+    content: "\f105";
     font-family: FontAwesome;
     display: inline-block;
     vertical-align: middle;
@@ -793,7 +793,20 @@
     right: 0;
 }
 
+.back-svg {
+    position: absolute;
+    width: 65%;
+    bottom: 0;
+    right: 0;
+    opacity: 0.5;
+}
 
-/*----------------------------------
-32 - Banners
-----------------------------------*/
+@media (max-width: 768px) {
+    .back-svg {
+        width: 98%;
+    }
+}
+
+.desc-font {
+    font-size: 18px;
+}
